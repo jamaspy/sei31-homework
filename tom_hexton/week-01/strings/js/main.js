@@ -3,10 +3,10 @@ const DrEvil = function(dollars) {
   if (dollars === 1000000) {
     console.log(`${dollars} dollars. *pinky*`);
     return dollars;
-  }
+  };
   console.log(`${dollars} dollars.`);
   return dollars;
-}
+};
 // function called
 DrEvil(1000000);
 
@@ -26,7 +26,7 @@ const mixUp = function(string1, string2) {
   const mixTwo = stringOneFirstLetter + stringTwoSliceRemainder;
 
   console.log(`${mixOne}, ${mixTwo}`);
-}
+};
 // function called
 mixUp('mix', 'pod');
 
@@ -34,3 +34,13 @@ console.log('\n--------------------');
 
 
 console.log("--------------------\nFixStart\n\n");
+const fixStart = function( string ) {
+  const firstLetter = string.charAt(0); // remember original argument's first letter
+  const replacementChar = '*'; // assign character to be used as the join() function seperator string
+  const newString = string.split( firstLetter ).join( replacementChar ); // split original string anywhere firstLetter appears & then join them into one giant string using replacementChar as the 'spacer'
+  const newStringMinusFirstLetter = newString.slice(1); // remove first letter from crazy split string
+  console.log( firstLetter + newStringMinusFirstLetter );
+};
+// function called
+fixStart('babble');
+console.log('\n--------------------');
