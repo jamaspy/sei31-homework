@@ -42,5 +42,5 @@ const fixStart = function( string ) {
   console.log( firstLetter + newStringMinusFirstLetter );
 };
 // function called
-fixStart('babble');
+fixStart('testy mctestyface');
 console.log('\n--------------------');
