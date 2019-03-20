@@ -12,8 +12,7 @@ const maxOfTwoNumbers = function(x, y){
   };
   }
 console.log(maxOfTwoNumbers(3,1))
-console.log(maxOfTwoNumbers(15,44))
-console.log(maxOfTwoNumbers(123,42))
+//console.log(maxOfTwoNumbers(123,42))
 
 //Define a function maxOfThree that takes three numbers as arguments and returns the largest of them.
 const maxOfThree = function (a, b, c){
@@ -100,7 +99,7 @@ console.log(reverseString2("hello"));
 
 //Write a function findLongestWord that takes an array of words and returns the length of the longest one.
 
-const findLongestWord = ['1', '22', '333', '4444', '666666', '55555'];
+const findLongestWord = ['1', '22', '333', '4444', 'longest6', 'second5'];
 
 var lgth = 0;
 var longest;
@@ -136,8 +135,6 @@ or like Wheel of Fortune without the wheel and fortune).
 Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters
 (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').
 */
-let guessWord = ['f','o','x']
-let guessedLetters = [];
 //var score = 0;
 
 /*function randomScore() {
@@ -150,22 +147,31 @@ let guessedLetters = [];
 Write a function called guessLetter that will:
 Take one argument, the guessed letter.
 */
+
+
+let guessWord = ['f','o','x']
+let guessedLetters = ['','',''];
+let score = guessWord.length;
+
 const guessLetter = function(str){
   for (var i = 0; i < guessWord.length; i++){
-  if (str === guessWord[i]){
-  //score = `${randomScore} + ${score}` - try to add points, how do i call a function
-  //randomScore();
-  //return guessWord[i];
-  return `you guessed correct ${ str }`
-  guessedLetters[i] = str;
+    if (str === guessWord[i]) {
+      //score = `${randomScore} + ${score}` - try to add points, how do i call a function
+      //randomScore();
+      //return guessWord[i];
+      console.log( `you guessed correct ${ str }`);
+      guessedLetters[i] = str;
+      score -= 1;
+      console.log(guessedLetters);
+      console.log("score: ", score);
+    }
+    if (i === guessWord.length-1 && str !== guessWord[i]){
+      console.log(`pick another letter, game status = ${guessedLetters}`)
+    }
+    if (score === 0){
+      return `You won the game and spelt ${guessWord}`
+    }
   }
-  if (guessWord.length === guessedLetters.length){
-  return `You won the game and spelt ${guessWord}`
-  }
-  if (str !== guessWord[i]){
-  return `pick another letter, game status = ${guessedLetters}`
-}
-}
 }
 
 /*
