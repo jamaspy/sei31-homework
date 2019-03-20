@@ -102,18 +102,18 @@ Look up the JavaScript string reference to find methods which may be useful!
 
 const mixUp = function(word1, word2) {
   const fTwo = word1.substring(0, 2);
-  const fEnd = word1.substring(2, 20);
+  const fEnd = word1.substring(2, word1.length);
   const sTwo = word2.substring(0, 2);
-  const sEnd = word2.substring(2, 20);
+  const sEnd = word2.substring(2, word2.length);
   console.log(`${sTwo}${fEnd} ${fTwo}${sEnd}`);
 }
 //mixUp("Hello", "World");
 
 const mixUpVTwo = function(word1, word2) {
   const minLastTwoWordOne = word1.slice(0, -2);
-  const lastTwoWordOne = word1.slice(-2, 20);
+  const lastTwoWordOne = word1.slice(-2, word1.length);
   const minLastTwoWordTwo = word2.slice(0, -2);
-  const lastTwoWordTwo = word2.slice(-2, 20);
+  const lastTwoWordTwo = word2.slice(-2, word2.length);
   console.log(`${minLastTwoWordOne}${lastTwoWordTwo} ${minLastTwoWordTwo}${lastTwoWordOne}`);
 }
 //mixUpVTwo("big", "dog");
@@ -129,52 +129,28 @@ For example:
 fixStart('babble'): 'ba**le'
 Verbing
   */
-/*
-const fixStart = function(str){
-  const fLetter = str.substring(0, 1);
-  const rest = str.substring(1, 20);
-  let newWord = rest.replace(/fLetter/g, "*")
-  console.log(`${fLetter}${newWord}`);
-}
-fixStart("babble");
-*/
 
 
+  const fixStart = function (str) {            //Declares function
+     if (str.length > 0) {                     //blow code only valid if string greater than 0 index(starting after first char)
 
+       const firstChar = str.charAt(0);         //stores the first index from function input
+       let newString = firstChar;               //stores first character and concats in the for loop
 
-/*
-const fixStart = function(word){
-  const firstLetter = word[0]
-  const replaceLetter = "*";
-  for(var i = 0; i < word.length; i++){
-    if(word[i] === firstLetter){
-      word[i] = replaceLetter;
+       for (var i = 1; i<str.length; i++) {             //loop instructions
+         if (str.charAt(i) === firstChar) {             //if string iteration at i index is = to the first character
+           newString = newString.concat("*");           //if condition is true prints a * onto the string
+         } else {                                       //otherwise
+           newString = newString.concat(str.charAt(i));//all other iiterations print the character at iteration
+         }
+       }
+
+       console.log(newString);                         //logs new string
+       return newString                                //returns answer(must be below log or you will get no result)
     }
-  }
-  console.log(word);
-}
- fixStart("babble");
-*/
-/*
-const fixStart = function(word){
-const firstLetter = word[0]
-const newWord = word.replace(/word[0]/g, "*")
-  console.log(newWord);
-}
-fixStart("Babble");
-*/
+  };
 
-/*
- const fixStart = function(word){
-   for(var i=0; i<word.length; i++){
-       if(word[i] === word[0]){
-         word.replace(word[i] = "*");
-       };
- console.log(word);
- }
-  fixStart("babble");
-*/
-
+  //fixStart('babble');                                   //calling the function with an argument
 
 
   /*
@@ -186,6 +162,10 @@ If the string length is less than 3, it should leave it unchanged. For example:
   verbing('swim'): 'swimming'
   verbing('swimming'): 'swimmingly'
   verbing('go'): 'go'
+*/
+
+
+/*
 Not Bad
 Create a function called notBad that takes a single argument, a string.
 
@@ -198,3 +178,25 @@ For example:
   notBad('This movie is not so bad!'): 'This movie is good!'
   notBad('This dinner is bad!'): 'This dinner is bad!'
   */
+
+  const notBad = function (str) {
+  let newString = str;
+  if (str.includes("not") && str.includes("bad")) {
+    const notIndex = str.indexOf("not");
+    const badIndex = str.indexOf("bad");
+
+    //If the 'bad' follows the 'not'
+    if (badIndex > notIndex) {
+      const phrase = str.substring(notIndex, (badIndex+3));
+      //console.log(phrase);
+      newString = str.substring(0, notIndex);
+      newString = newString.concat("good");
+      newString = newString.concat(str.substring(badIndex+3, str.length));
+    }
+  }
+
+  console.log(newString);
+  return newString;
+};
+
+//notBad('This dinner is not that bad!');
