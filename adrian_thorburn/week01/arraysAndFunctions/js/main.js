@@ -138,6 +138,14 @@ Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X
 */
 let guessWord = ['f','o','x']
 let guessedLetters = [];
+//var score = 0;
+
+/*function randomScore() {
+  var x = Math.floor((Math.random() * 10) + 1);
+  score = score + x;
+}*/
+
+
 /*
 Write a function called guessLetter that will:
 Take one argument, the guessed letter.
@@ -145,6 +153,8 @@ Take one argument, the guessed letter.
 const guessLetter = function(str){
   for (var i = 0; i < guessWord.length; i++){
   if (str === guessWord[i]){
+  //score = `${randomScore} + ${score}` - try to add points, how do i call a function
+  //randomScore();
   //return guessWord[i];
   return `you guessed correct ${ str }`
   guessedLetters[i] = str;
@@ -158,10 +168,11 @@ const guessLetter = function(str){
 }
 }
 
-
-
 /*
-
+Bonus: Make it more like Wheel of Fortune:
+Start with a reward amount of $0
+Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
+When they guess the word, log their final reward amount.
 
 
 Iterate through the word letters and see if the guessed letter is in there.
