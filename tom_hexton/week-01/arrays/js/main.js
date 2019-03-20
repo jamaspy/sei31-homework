@@ -103,11 +103,27 @@ console.log(`${reverseString('jag testar')}`);
 
 console.log("\n\n#6.\n--------------------");
 const findLongestWord = function(array) {
-	const arrayOfCharLength = [];
-	for (let i = 0; i < array.length; i+= 1) {
-		array[i].length.arrayLength.pop();
-	}
+	let lengthOfWords = '';
+	for (let i = 0; i < array.length; i += 1) {
+		if (lengthOfWords.length < array[i].length) {
+			lengthOfWords = array[i];
+		};
+	};
+	return lengthOfWords;
 };
+// function called
+console.log(`The longest word in the array is; ${findLongestWord(['this', 'is', 'an', 'appropriate', 'test'])}.`);
 
-// go through the array calculating and reporting the length of each item to another array.
-// use Math.max of that array.
+
+console.log("\n\n#7.\n--------------------");
+const filterLongestWords = function(array, lengthToBeat) {
+	let longWords = [];
+	for (let i = 0; i < array.length; i += 1) {
+		if (array[i].length > lengthToBeat) {
+			longWords.push(array[i]);
+		};
+	};
+	return longWords.join(', ');
+};
+// function called
+console.log(`The words longer than 2 in the array are; ${filterLongestWords(['this', 'is', 'an', 'appropriate', 'test'], 2)}.`);
