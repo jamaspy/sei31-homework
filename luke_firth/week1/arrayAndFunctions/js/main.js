@@ -1,6 +1,7 @@
 console.log("Running......");
 
 
+
 /*
 Array and Functions Bonus Material
 Define a function maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them.
@@ -46,6 +47,14 @@ console.log(maxOfThreeNumbers(9, 2, 1));
 console.log(maxOfThreeNumbers(2, 8, 20));
 */
 
+//CODE ALONG HERE ->>>
+
+
+
+
+
+
+/*
 const vowelMac = function(str){
     if( str == "a") {
       return true;
@@ -68,7 +77,22 @@ const vowelMac = function(str){
 }
 console.log(vowelMac("a"));
 
+*/
 
+//CODE ALONG HERE ->>>
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 var numArray = [1, 2, 3, 4],
   s = 0,
   p = 1,
@@ -82,8 +106,13 @@ const sumArray = function() {
   console.log('The sum of the array is  ' + s);
 }
 console.log(sumArray());
+*/
+
+//CODE ALONG HERE ->>>
 
 
+
+/*
 const multiplyArray = function() {
 
   for (i = 0; i < numArray.length; i += 1) {
@@ -91,10 +120,15 @@ const multiplyArray = function() {
   }
   console.log('The product of the array is  ' + p);
 }
-console.log(multiplyArray());
+console.log(multiplyArray(6));
 */
 
 //CODE ALONG HERE ->>>
+
+
+
+
+
 
 /*
 Bonus
@@ -104,7 +138,6 @@ Write a function findLongestWord that takes an array of words and returns the le
 Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
  js-homework-3.md
 */
-
 /*
 const filterLongestWords = function(array, num) {
   if (array.length > num){
@@ -115,13 +148,14 @@ const filterLongestWords = function(array, num) {
 console.log(filterLongestWords("longword", 5));
 
 */
-//
+
+//CODE ALONG HERE ->>>
 
 
 
-/*
-const reverseString = function(str){
-  let reversed = "";
+
+const reverseString = function(str){            //declaring Functions
+  let reversed = "";                            //
   for (var i = str.length - 1; i >= 0; i--){
     reversed += str[i];
   }
@@ -129,9 +163,9 @@ const reverseString = function(str){
   return reversed;
 }
 reverseString("reverse this string");
-*/
 
-/*
+
+
 const findLongestWord= function(array) {
   let word = "";
   for (let i = 0; i < array.length; i++) {
@@ -145,15 +179,6 @@ const findLongestWord= function(array) {
     return array.reduce((a, b) => a.length < b.length ? b : a, "");
   }
 }
-*/
-
-const longestWord = function(array){
-
-
-
-}
-
-
 
 /*
 Homework: The Word Guesser
