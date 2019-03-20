@@ -1,4 +1,4 @@
-console.log("working?")
+// console.log("working?")
 /*Array and Functions Bonus Material
 Define a function maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them.
 Use the if-then-else construct available in Javascript. You'll have to remember your pre-work, or do some googling to figure this out.
@@ -12,7 +12,6 @@ const maxOfTwoNumbers = function(x, y){
   };
   }
 console.log(maxOfTwoNumbers(3,1))
-//console.log(maxOfTwoNumbers(123,42))
 
 //Define a function maxOfThree that takes three numbers as arguments and returns the largest of them.
 const maxOfThree = function (a, b, c){
@@ -20,28 +19,17 @@ const maxOfThree = function (a, b, c){
     return `Variable a: ${a} was the biggest`;  //interpolation
   }
   if(b > a && b > c){
-    return b;
+    return `Variable a: ${b} was the biggest`;
   }
   else {
-    return c;
+    return `Variable a: ${c} was the biggest`;
   };
 }
 console.log(maxOfThree(8 , 4, 6))
-
 //Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
-/* - from the web
-const isVowel = function(char)
-{
-    return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' || false;
-}
-console.log(isVowel('z'));
-console.log(isVowel('a'));
-*/
-
-// i initially messed up here trying to do if (p === "a" || "e" || "i" || "o" || "u") - Is there a shorthand way to right this?
 const vowelTest = function(p){
-  if (p === "a" || p === "e" || p === "i" || p === "o" || p ==="u") {
+  if (p === "a" || p === "e" || p === "i" || p === "o" || p ==="u" || p === "A" || p === "E" || p === "I" || p === "O" || p ==="U") {
     return true;
   } else {
     return false;
@@ -49,7 +37,7 @@ const vowelTest = function(p){
 }
 
 console.log(vowelTest("z"));
-console.log(vowelTest("a"));
+console.log(vowelTest("A"));
 
 /*
 Define a function sumArray and a function multiplyArray that sums and multiplies (respectively) all the numbers in an array of numbers.
@@ -68,14 +56,14 @@ console.log(sumArray); // 10
 const multiplyArray = [1, 2, 3, 4].reduce( (a,b) => a * b );
 console.log(multiplyArray)
 
-//const sumArray = function(a,b,c,d){
-//let splitString = str.split("");
-//console.log(splitString)
-//for (var i = 0; i < splitString.length; i = i + 1){
-//  splitString[i] + splitString[i+1]
-//console.log(sumArray);
-//for (var i = 0, sum = 0; i < splitString.length; sum += splitString[i++]);
-//}
+  //const sumArray = function(a,b,c,d){
+  //let splitString = str.split("");
+  //console.log(splitString)
+  //for (var i = 0; i < splitString.length; i = i + 1){
+  //  splitString[i] + splitString[i+1]
+  //console.log(sumArray);
+  //for (var i = 0, sum = 0; i < splitString.length; sum += splitString[i++]);
+  //}
 
 
 
@@ -125,8 +113,6 @@ for(var i = 0; i < filterLongWords.length; i++){
   // console.log(currentLength);
    }
 }
-
-
 
 /*
 You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman,
@@ -187,18 +173,5 @@ When it's done iterating, it should log the current guessed letters ('F__') and 
 It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
 Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //
