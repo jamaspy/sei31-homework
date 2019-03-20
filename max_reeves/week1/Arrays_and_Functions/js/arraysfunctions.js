@@ -64,3 +64,35 @@ const reverseString = function(input){
   }
 
 console.log(reverseString("jag tester"));
+
+// Write a function findLongestWord that takes an array of words and returns the length of the longest one.
+
+const words = ['1234','12345', '123456', '1234567'];
+
+const longestString = function(input) {
+      let longString = '';
+      for ( let i = 0; i < input.length; i++) {
+        if ( input[i].length > longString.length ) {
+           longString = input[i];
+        }
+      }
+     return longString;
+    }
+
+console.log(longestString(words));
+
+// Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
+
+const array2 = ["hello", "goodbye", "farewell", "good-morning"];
+
+const filterLongWords = function (input, i){
+  let longestWords = [];
+   for (var i = 3; i < array2.length; i++){
+     if (array2[i].length>i){
+              longestWords.push(array2[i]);
+}
+}
+return longestWords;
+}
+
+console.log(filterLongWords(array2));
