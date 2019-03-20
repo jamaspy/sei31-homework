@@ -50,7 +50,7 @@ document.getElementById("hangman").appendChild(hangman);
 // game logic after a click
 let imageCounter = 1;
 const getLetter = function() {
-  const letter = document.getElementById("letterInput").value;
+  const letter = document.getElementById("letterInput").value.toUpperCase();
   document.getElementById("letterInput").value = '' // clears the input 
   if ( letterInWord( letter )){
     changeLetter( letter );
