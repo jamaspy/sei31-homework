@@ -16,6 +16,8 @@ const creditCardValidator = function ( cc ){
   if (cardNumbers.length !== 16){
     return false;
   };
+  
+
 
   //make sure all characters are numbers;
   const numbers = cardNumbers.filter(l => isNaN(l));
