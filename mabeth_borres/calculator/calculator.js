@@ -1,4 +1,6 @@
 // Homework By Mabeth Borres of SEI-31
+// Can be accessed running at:
+// https://github.com/mmborres/mmborres.github.io/tree/master/homework/index.html
 
 // Global Variable for display only on Web Page
 let printMsg = "";
