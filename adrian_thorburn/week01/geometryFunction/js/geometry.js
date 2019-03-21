@@ -145,15 +145,24 @@ const validateCreditCard = function(cc){
   console.log(ccToInterger);
   //take the first number and check that it doesnt duplicate accross the array.
     for (var i = 1; i < ccToInterger.length; i++) {
-      if(firstNumber !== ccToInterger[i]){
+      if(firstNumber === ccToInterger[i]){
         return `card number valid`
       } else {
-          console.log(`all same invalid`);
+        console.log(`all same invalid`);
         }
     }
+}
+
+//console.log(validateCreditCard('1111-1111-1111-1110'));
+console.log(validateCreditCard('6666-6666-6666-6666')); //n
+//console.log(validateCreditCard('9999-9999-8888-0000')); //y
+//console.log(validateCreditCard('6666-6666-6666-1666')); //y
+// console.log(validateCreditCard('a923-3211-9c01-1112')); //n
+// console.log(validateCreditCard('4444-4444-4444-4444')); //n
+// console.log(validateCreditCard('1111-1111-1111-1110')); //n
 
 
-    //from da internets - couldnt get it to work
+    //from da internets - works
     // takes the form field value and returns true on valid number
     function valid_credit_card(value) {
       // accept only digits, dashes or spaces
@@ -177,81 +186,7 @@ const validateCreditCard = function(cc){
 
     	return (nCheck % 10) == 0;
     }
-    console.log(`${valid_credit_card(cardNumber)}`);
-}
-
-
-
-
-
-//console.log(validateCreditCard('1111-1111-1111-1110'));
-// console.log(validateCreditCard('6666-6666-6666-6666')); //n
-// console.log(validateCreditCard('9999-9999-8888-0000')); //y
-console.log(validateCreditCard('6666-6666-6666-1666')); //y
-// console.log(validateCreditCard('a923-3211-9c01-1112')); //n
-// console.log(validateCreditCard('4444-4444-4444-4444')); //n
-// console.log(validateCreditCard('1111-1111-1111-1110')); //n
-
-
-
-
-
-
-//let cardNumbers = cc.split(‘-’);
-//cardNumbers = cardNumbers.reduce((string, elements) => string + elements ) //concatinate the chars back together
-//cardNumbers = cardNumbers.split(‘’) // split them again
-
-// The following credit card numbers are valid:
-//
-// 9999-9999-8888-0000
-// 6666-6666-6666-1666
-// The following credit card numbers are invalid:
-//
-// a923-3211-9c01-1112 invalid characters
-// 4444-4444-4444-4444 only one type of number
-// 1111-1111-1111-1110 sum less than 16
-// 6666-6666-6666-6661 odd final number
-// Example
-// validateCreditCard('9999-9999-8888-0000'); // Returns: true
-// Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
-//
-
-// Double Bonus: Make your credit card scheme even more advanced! What are the rules, and what are some numbers that pass or fail?
-// Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(valid_credit_card(`9999-9999-8888-0000`));
 
 
 
