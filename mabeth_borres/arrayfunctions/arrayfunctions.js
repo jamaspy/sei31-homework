@@ -1,6 +1,7 @@
 // Homework by Mabeth Borres of SEI 31
-// Can be accessed running at:
-// https://github.com/mmborres/mmborres.github.io/tree/master/homework/index.html
+
+// ALL MY HOMEWORK can be accessed running at:
+// https://mmborres.github.io/homework/arrayfunctions.html
 
 
 /*Define a function maxOfTwoNumbers that takes two numbers as arguments and

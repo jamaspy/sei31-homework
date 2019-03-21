@@ -1,6 +1,7 @@
 // Homework By Mabeth Borres of SEI-31
-// Can be accessed running at:
-// https://github.com/mmborres/mmborres.github.io/tree/master/homework/index.html
+
+// ALL MY HOMEWORK can be accessed running at:
+// https://mmborres.github.io/homework/strings.html
 
 /*Create a function called DrEvil. It should take a single argument, an amount,
 and return '<amount> dollars',

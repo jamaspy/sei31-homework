@@ -1,6 +1,7 @@
 // Homework by Mabeth Borres of SEI 31
-// Can be accessed running at:
-// https://github.com/mmborres/mmborres.github.io/tree/master/homework/index.html
+
+// ALL MY HOMEWORK can be accessed running at:
+// https://mmborres.github.io/homework/wordguesser.html
 
 /*You'll create a simple word guessing game where the user gets infinite tries to guess the word
 (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
