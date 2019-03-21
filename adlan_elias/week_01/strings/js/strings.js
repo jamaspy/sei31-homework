@@ -92,8 +92,27 @@ For example:
   notBad('This dinner is bad!'): 'This dinner is bad!'
   */
 
-  function notBad(string1){
-    let bad  ;
+  const notBad = function (string) {
+
+    let badIndex;
+    let notIndex;
+
+    if (string.includes('not') && string.includes('bad')) {
+    badIndex = string.indexOf('bad');
+    notIndex = string.indexOf('not');
+  } else {
+    return string
   }
 
-  notBad('This dinner is not that bad!');
+  if (badIndex > notIndex) {
+    let beforeNot = string.substring(0, notIndex);
+
+    let afterBad = string.substring(badIndex+3, string.length);
+    let newStr = beforeNot + 'good' + afterBad;
+    return newStr;
+  }
+};
+
+console.log(notBad('This dinner is not that bad!'))
+console.log(notBad('This movie is not so bad!'))
+console.log(notBad('This dinner is bad!'))
