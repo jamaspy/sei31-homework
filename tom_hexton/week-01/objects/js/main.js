@@ -158,75 +158,69 @@ console.log( '\n\n' );
 console.log( 'Credit Card Validation' );
 // --------------------
 // Part 4 Credit Card Validation
-const validateCreditCard = function( creditCardNumber ) {
+const validateCreditCard = function( creditCardString ) {
 
-	// remove the hyphen
-	creditCardNumber = creditCardNumber.split( '-' ).join( '' );
+	// removing hyphen
+	creditCardString = creditCardString.split( '-' ).join( '' );
 
-	for ( let i = 0; i < creditCardNumber.length; i += 1 ) {
-		// console.log('---');
-		for ( let j = i + 1; j < creditCardNumber.length; j += 1 ) {
-			// console.log(creditCardNumber[ i ] + ', ' + creditCardNumber[ j ]);
-			if ( creditCardNumber[ i ] !== creditCardNumber[ j ] ) {
-				// console.log('Same');
-				true;
-			}	else {
-				return false;
-			}
-		};
-	};
+	// converting to a number
+	const creditCardNumber = Number( creditCardString );
+	console.log( creditCardNumber );
 
-
-	// // remember first letter from original string
-	// const firstChar = creditCardNumber[ 0 ];
-	// // slice string after first letter
-	// const afterFirstChar = creditCardNumber.slice( 1 )
-	// // split string into individual letters ready for looping
-	// const splitCreditCard = afterFirstChar.split( '' );
-
-	// if ( firstLetter !== afterFirstLetter.includes( firstLetter ) ) {
-	// 	true;
-	// } else {
-	// 	return false;
-	// };
-	// console.log(creditCardNumber);
-
-
-	if ( !creditCardNumber.includes( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' ) ) {
-		true;
-	} else {
+	// checking to see if contains any letters
+	if ( !creditCardString.includes( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z' ) ) {} else {
 		console.log( 'Invalid characters.' );
 		return false;
 	};
 
-	const lastNumber = creditCardNumber[ creditCardNumber.length - 1 ];
-	const convertedToNumber = Number( lastNumber );
+	// checking if original string is 16 character
+	if ( creditCardString.length === 16 ) {} else {
+		return false;
+	}
 
-	if ( lastNumber % 2 === 0 ) {
-		true;
-	} else {
+	if ( !allSameNumber(creditCardNumber) ){
+		return false
+	};
+
+	// assigning final character from original string
+	const lastNumber = creditCardString[ creditCardString.length - 1 ];
+
+	// finding if final number is even
+	if ( lastNumber % 2 === 0 ) {} else {
 		console.log( 'Odd final number.' );
 		return false;
 	};
 
-	if ( creditCardNumber.length === 16 ) {
-		true
-	} else {
-		return false;
-	}
-
+	// console.log( 'Good to go.' );
 	return true;
 };
-// function called
+
+// read remaining charaters and if different to firstChar add to array
+const allSameNumber = function( creditCardNumber ) {
+	// declare array and add first character
+	creditCardNumber = creditCardNumber.toString()
+	let firstNum = creditCardNumber[ 0 ];
+	console.log(typeof creditCardNumber);
+
+	for ( let i = 1; i < creditCardNumber.length; i += 1 ) {
+		if ( firstNum !== creditCardNumber[ i ] ) {
+			return true;
+		};
+	};
+	return false;
+
+};
+
+// functions called
 console.log( '\n\n Valid variants.\n-----' );
-validateCreditCard( '9999-9999-8888-0000' );
+console.log( validateCreditCard( '9999-9999-8888-0000' ) );
 console.log( '\n' );
-validateCreditCard( '6666-6666-6666-1666' );
+console.log( validateCreditCard( '6666-6666-6666-1666' ) );
 console.log( '\n\n Invalid variants.\n-----' );
-validateCreditCard( 'a923-3211-9c01-1112' );
+console.log( validateCreditCard( 'a923-3211-9c01-1112' ) );
 console.log( '\n' );
-validateCreditCard( '4444-4444-4444-4444' );
+console.log( validateCreditCard( '4444-4444-4444-4444' ) );
 console.log( '\n' );
-validateCreditCard( '1111-1111-1111-1110' );
+console.log( validateCreditCard( '1111-1111-1111-1110' ) );
 console.log( '\n' );
-validateCreditCard( '6666-6666-6666-6661' );
+console.log( validateCreditCard( '6666-6666-6666-6661' ) );
