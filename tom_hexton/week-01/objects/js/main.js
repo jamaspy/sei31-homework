@@ -1,3 +1,5 @@
+// https://gist.github.com/wofockham/dacf2da17c743afb2b17
+
 // --------------------
 // Part 1 Rectangles
 const rectangleA = {
