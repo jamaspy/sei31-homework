@@ -2,72 +2,49 @@
 const subwayLines = {
   N: ['Times Square', '34th', '28th', '23rd',  'Union Square', '8th'],
   L: ['8th', '6th',  'Union Square', '3rd', '1st'],
-  "6": ['Grand Central', '33rd', '28th', '23rd', 'Union Squar', 'Astor Place'] //number into string
+  "6": ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'] //number into string
 }
 
-function indexFinder(lineName, stationName, sameLineLast){ 
-  for (let i = 0; i <= lineName.length; i++) {
-    if(lineName[i] === stationName){
-      return i; 
-    }
-  }
-}
+
+function ab(s, u, line ){ return s < u ? line.slice(s, u+1) : line.slice(u, s+1).reverse(); }
 
 const planTrip = function(line1, station1, line2, station2 ){  
-    let startLine = subwayLines[line1] //  array,  done  
-    let startStationIndex = indexFinder(startLine, station1); // index number, done
-    let firstUnionIndex =indexFinder(startLine, 'Union Square')
-    let secondLine = subwayLines[line2] //array, done
-    let lastStationIndex = indexFinder(secondLine, station2) // index number, done
-    let secondUnionIndex =indexFinder(secondLine, 'Union Square')
-    let firstHalf =[]
-    let secondHalf=[]
-    
-  if(line1 === line2 ){
-      if(startStationIndex < lastStationIndex){
-        console.log(`You don't have to transfer to other lines. Stay on this train until you get to ${station2} station`);
-        return startLine.slice(startStationIndex, lastStationIndex+1) //done
-        
-      } else if(startStationIndex > lastStationIndex){
-        console.log(`You don't have to transfer to other lines. Stay on this train until you get to ${station2} station`);
-        return startLine.slice(lastStationIndex, startStationIndex+1).reverse(); //done
-        
-    }
-}
-if(line1 !== line2){
-  if(startStationIndex < firstUnionIndex){
-    firstHalf = startLine.slice(startStationIndex, firstUnionIndex+1);       
-  }else if(startStationIndex > firstUnionIndex){
-    firstHalf =startLine.slice(firstUnionIndex, startStationIndex+1).reverse(); 
-  }
-
-  if( secondUnionIndex < lastStationIndex){
-    secondHalf = secondLine.slice(secondUnionIndex+1, lastStationIndex+1);
-
-  }else if(lastStationIndex < secondUnionIndex){
-    secondHalf = secondLine.slice(lastStationIndex, secondUnionIndex).reverse();
-  }
-
-}
-  let totalStations =firstHalf.concat(secondHalf)
-  
-    console.log(`
-    You must travel through the following stops on the ${line1} line: ${firstHalf}.
-    Change at "Union Square". 
-    Your journey continues through the following stops. ${line2} line: ${secondHalf}
-    ${totalStations.length} station in total.      
-                 `)  
-  }
-  
-    
+    let idx= { s1: subwayLines[line1].indexOf(station1), s2:subwayLines[line2].indexOf(station2), 
+               u1: subwayLines[line1].indexOf('Union Square'), u2: subwayLines[line2].indexOf('Union Square')}
    
-// }
+    let firstHalf = ab(idx.s1, idx.u1, subwayLines[line1])
+    let secondHalf =ab(idx.s2, idx.u2, subwayLines[line2]).reverse() 
+    let a = (secondHalf[0] || secondHalf[secondHalf.length-1])=='Union Square' ? secondHalf.splice(secondHalf.indexOf('Union Square'), 1) : secondHalf = secondHalf //order always matters
+    let totalStations = line1 !== line2 ? firstHalf.concat(secondHalf) : ab(idx.s1, idx.s2, subwayLines[line1])
+
+    let m1 = `Stations you must travel through are : ${firstHalf.join(', ')} on ${line1} line.`
+    let m2 = `And transfer to ${line2} line at "Union Square". `  
+    let m3 = `Your journey continues through the  ${line2} line: ${secondHalf.join(', ')}.`
+    let m4 = `Now, you are on ${line2}. You don't have to transfer. Please get off at ${station2} station on ${line2} Line.`
+    let m5 = `You will pass ${totalStations.join(', ')}, and ${totalStations.length} stations in total.`
+    let m6 = `Please check the line and station again. The station and the Line does not match.`
+    let m7 = `You are at the station at the moment. No need to use the train.`
+  
+  if((line1 === line2 && station1 === station2) || (station1 === 'Union Square' && 'Union Square'===station2)){console.log(m7);}
+
+  if(idx.s1 === -1 || idx.s2 === -1) { console.log(m6);  return }
+
+  if(line1 === line2){ console.log(m4+" "+m5); return} 
+   console.log(m1+" "+m2+" "+m3+" "+m4+" "+m5);    
+}
 
 
 
-planTrip('N', '34th', 'L', '8th')
-planTrip('N', '34th', 'L', '1st')
-planTrip('L', '3rd', 'L', '8th');
-planTrip('L', '8th', 'L', '3rd');
+// planTrip('L', '3rd', 'L', '8th'); //  //done
+// planTrip('L', '8th', 'L', '3rd'); //done
+// planTrip('L', 'Union Square', 'L', '3rd'); //done
+
+// planTrip('N', '34th', 'L', 'Union Square') // //done
+// planTrip('N', 'Union Square', '6', 'Astor Place') // order miss. it returns Astro Place and Union Sqaure. Why?? 
+// planTrip('N', 'Union Square', '6', 'Grand Central') // order miss. it returns Astro Place and Union Sqaure. Why?? 
+// planTrip('N', 'Union Square', 'L', 'Union Square')
+// planTrip('N', '34th', 'L', '1st') //done
+// planTrip('N', '34th', 'L', '8th') //done
+// planTrip('N', '34th', 'L', '100th') //wrong station //done
 
 
