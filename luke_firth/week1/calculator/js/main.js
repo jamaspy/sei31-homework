@@ -20,7 +20,7 @@ const squareNumber = function(num) {
   return result;
 };
 
-//squareNumber(10);
+squareNumber(10);
 
 const halfNumber = function(numH) {
   let result = numH / 2;
@@ -28,7 +28,7 @@ const halfNumber = function(numH) {
   return result;
 };
 
-//halfNumber(6);
+halfNumber(6);
 
 const percentOf = function(num1, num2) {
   result = (num1 * 100) / num2;
@@ -36,7 +36,7 @@ const percentOf = function(num1, num2) {
   return result;
 };
 
-//percentOf(4, 8);
+percentOf(4, 8);
 
 const areaOfCircle = function(num1) {
   result = Math.PI * num1 * num1;
@@ -44,7 +44,7 @@ const areaOfCircle = function(num1) {
   return result;
 };
 
-//areaOfCircle(10);
+areaOfCircle(10);
 
 /*
 Part 2
@@ -65,7 +65,7 @@ const badCalc = function(res1) {
   const answer = ans4;
   return answer;
 };
-//badCalc(10);
+badCalc(10);
 
 /*
 Strings
@@ -79,7 +79,7 @@ It should take a single argument, an amount, and return ' dollars', except it wi
   DrEvil(10): 10 dollars
   DrEvil(1000000): 1000000 dollars (pinky)
 */
-
+/*
 const drEvil = function(amount) {
   if (amount === 1000000) {
     console.log(`${amount} (pinky)`);
@@ -99,7 +99,7 @@ It should take in two strings, and return the concatenation of the two strings (
   mixUp('dog', 'dinner'): 'dig donner'
 Look up the JavaScript string reference to find methods which may be useful!
 */
-
+/*
 const mixUp = function(word1, word2) {
   const fTwo = word1.substring(0, 2);
   const fEnd = word1.substring(2, word1.length);
@@ -117,7 +117,7 @@ const mixUpVTwo = function(word1, word2) {
   console.log(`${minLastTwoWordOne}${lastTwoWordTwo} ${minLastTwoWordTwo}${lastTwoWordOne}`);
 }
 //mixUpVTwo("big", "dog");
-
+*/
 /*
 
 FixStart
@@ -130,7 +130,7 @@ fixStart('babble'): 'ba**le'
 Verbing
   */
 
-
+/*
   const fixStart = function (str) {            //Declares function
      if (str.length > 0) {                     //blow code only valid if string greater than 0 index(starting after first char)
 
@@ -149,7 +149,7 @@ Verbing
        return newString                                //returns answer(must be below log or you will get no result)
     }
   };
-
+*/
   //fixStart('babble');                                   //calling the function with an argument
 
 
@@ -178,7 +178,7 @@ For example:
   notBad('This movie is not so bad!'): 'This movie is good!'
   notBad('This dinner is bad!'): 'This dinner is bad!'
   */
-
+/*
   const notBad = function (str) {
   let newString = str;
   if (str.includes("not") && str.includes("bad")) {
@@ -195,8 +195,11 @@ For example:
     }
   }
 
+
   console.log(newString);
   return newString;
 };
 
+
 //notBad('This dinner is not that bad!');
+*/
