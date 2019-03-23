@@ -10,33 +10,42 @@ const mtaNetwork = {
 const planTrip = function( board, alight ) {
 
 	// assign index1 to where they board the train
-	index1 = mtaNetwork.line6.indexOf( board );
+	boardingIndex = mtaNetwork.line6.indexOf( board );
 
 	// assign index 2 to where they alight the train
-	index2 = mtaNetwork.line6.indexOf( alight );
+	alightingIndex = mtaNetwork.line6.indexOf( alight );
 
-	console.log( `Your trip is from: '${mtaNetwork.line6[ index1 ]}' to '${mtaNetwork.line6[ index2 ]}.'` );
 
-	// find which of the two is biggest and smallest of the two
-	boardingIndex = Math.min( index1, index2 );
-	alightingIndex = Math.max( index1, index2 );
-	console.log( `boardingIndex: ${boardingIndex}, alightingIndex: ${alightingIndex}` );
 
-	traverseBoardingIndex = boardingIndex + 1;
-	traverseAlightingIndex = alightingIndex - 1;
-	console.log( `traverseBoardingIndex: ${traverseBoardingIndex}, traverseAlightingIndex: ${traverseAlightingIndex}` );
+	// if board[ i ] is smaller than alight[ i ] then run this code
+	if ( boardingIndex < alightingIndex ) {
 
-	// calculate the number of stops they must traverse for passing into for loop
-	// numberOfStops = biggestIndex - smallestIndex;
+		console.log( `Your trip is from: '${mtaNetwork.line6[ boardingIndex ]}' to '${mtaNetwork.line6[ alightingIndex ]}.'` );
 
-	// for loop that starts at the smallestIndex and proceeds is as long as numberOfStops
-	for ( let i = traverseBoardingIndex; i <= traverseAlightingIndex; i += 1 ) {
-		console.log( `You'll traverse across: ${mtaNetwork.line6[ i ]}` );
+		traverseBoardingIndex = boardingIndex + 1;
+		traverseAlightingIndex = alightingIndex - 1;
+		console.log( `traverseBoardingIndex: ${ traverseBoardingIndex }, traverseAlightingIndex: ${ traverseAlightingIndex }` );
+
+		// for loop that starts at the boardingIndex and proceeds is as long as alightingIndex
+		for ( let i = traverseBoardingIndex; i <= traverseAlightingIndex; i += 1 ) {
+			console.log( `You'll traverse across: ${mtaNetwork.line6[ i ]}` );
+		}
 	}
 
-	// use a for loop to print the characters between the difference of index1 and index2
-	// how do i find the characters between them?
+	if ( boardingIndex > alightingIndex ) {
+
+		console.log( `Your trip is from: '${mtaNetwork.line6[ boardingIndex ]}' to '${mtaNetwork.line6[ alightingIndex ]}.'` );
+
+		traverseBoardingIndex = boardingIndex + 1;
+		traverseAlightingIndex = alightingIndex - 1;
+		console.log( `traverseBoardingIndex: ${ traverseBoardingIndex }, traverseAlightingIndex: ${ traverseAlightingIndex }` );
+
+		for ( let i = traverseBoardingIndex; i <= traverseAlightingIndex; i -= 1 ) {
+			console.log( `You'll traverse across: ${ mtaNetwork.line6[ i ] }` );
+		}
+	}
 
 };
 
 planTrip( 'Astor Place', 'Grand Central' );
+planTrip( 'Grand Central', 'Astor Place' );
