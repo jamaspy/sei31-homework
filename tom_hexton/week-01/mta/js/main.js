@@ -7,7 +7,7 @@ const mtaNetwork = {
 	six: [ 'Astor Place', 'Union Station', '23rd', '28th', '33rd', 'Grand Central' ],
 };
 
-const sameLineStationAddition = function( trainLine ) {
+const sameLineStationAdditionPrint = function( trainLine ) {
 
 	console.log( `You'll get on at: ${ trainLine[ boardingIndex ] }.` );
 
@@ -24,7 +24,7 @@ const sameLineStationAddition = function( trainLine ) {
 	console.log( `And get off at: ${ trainLine[ alightingIndex ] }` );
 };
 
-const sameLineStationSubtraction = function( trainLine ) {
+const sameLineStationSubtractionPrint = function( trainLine ) {
 
 	console.log( `You'll get on at: ${ trainLine[ boardingIndex ] }` );
 
@@ -40,31 +40,73 @@ const sameLineStationSubtraction = function( trainLine ) {
 	console.log( `And get off at: ${ trainLine[ alightingIndex ] }` );
 };
 
-const increasingArrayIndexPrintFuction = function( boardLine, boardStation ) {
-	// need to find index of boardStation
-	boardingIndex = mtaNetwork[boardLine].indexOf( boardStation );
+const increasingBoardingArrayIndexPrint = function( boardLine, boardStation ) {
+	// boarding index find and allocation
+	boardingIndex = mtaNetwork[ boardLine ].indexOf( boardStation );
 
 	traverseBoardingIndex = boardingIndex + 1;
 
-	for ( let i = traverseBoardingIndex; i <= mtaNetwork[boardLine].indexOf('Union Station'); i += 1 ) {
-		if (true) {
-			console.log( `You'll traverse across: ${ mtaNetwork[boardLine][ i ] }` );
+	for ( let i = traverseBoardingIndex; i <= mtaNetwork[ boardLine ].indexOf( 'Union Station' ); i += 1 ) {
+		console.log( `You'll traverse across: ${ mtaNetwork[ boardLine ][ i ] }` );
+	};
 
-		}
-	}
+};
+const decreasingBoardingArrayIndexPrint = function( boardLine, boardStation ) {
+	// boarding index find and allocation
+	reversedBoardArray = mtaNetwork[ boardLine ].reverse();
+	boardingIndex = reversedBoardArray.indexOf( boardStation );
+	// console.log( mtaNetwork[ boardLine ] );
+	traverseBoardingIndex = boardingIndex;
+
+	for ( let i = mtaNetwork[ boardLine ].indexOf( 'Union Station' ); i >= traverseBoardingIndex; i -= 1 ) {
+		console.log( `You'll traverse across: ${ mtaNetwork[ boardLine ][ i ] }` );
+	};
 
 };
 
+const increasingAlightArrayIndexPrint = function( alightLine, alightStation ) {
+	// alighting index find and allocation
+	alightingIndex = mtaNetwork[ alightLine ].indexOf( alightStation );
+
+	traverseAlightingIndex = alightingIndex + 1;
+
+	for ( let i = traverseAlightingIndex; i >= mtaNetwork[ alightLine ].indexOf( 'Union Station' ); i += 1 ) {
+		console.log( `You'll traverse across: ${ mtaNetwork[ alightLine ][ i ]}` );
+	}
+};
+const decreasingAlightArrayIndexPrint = function( alightLine, alightStation ) {
+	// alighting index find and allocation
+	reversedAlightArray = mtaNetwork[ alightLine ].reverse();
+	alightingIndex = reversedAlightArray.indexOf( alightStation );
+	// console.log( mtaNetwork[ alightLine ] );
+
+	traverseAlightingIndex = alightingIndex;
+
+	// console.log( reversedAlightArray.indexOf( 'Union Station' ), alightingIndex );
+
+	for ( let i = reversedAlightArray.indexOf( 'Union Station' ); i >= traverseAlightingIndex ; i -= 1 ) {
+		console.log( `You'll traverse across: ${ mtaNetwork[ alightLine ][ i ]}` );
+	}
+};
+
+// main function called ////////////////////////////////////////////////////////
 const planTrip = function( boardLine, boardStation, alightLine, alightStation ) {
+
+	// converting input of '6' to 'six' for array referencing
+	if ( boardLine === '6' ) {
+		boardLine = 'six';
+	} else if ( alightLine === '6' ) {
+		alightLine = 'six';
+	};
 
 	// turn inputs into capitals so don't need to catch both caps and non caps in each if case.
 	boardLine = boardLine.toLowerCase();
 	alightLine = alightLine.toLowerCase();
 
-	// converting input of '6' to 'six' for array referencing
-	if (boardLine === '6') {
-		boardLine === 'six';
-	};
+	boardingStationIndex = mtaNetwork[ boardLine ].indexOf( boardStation );
+	alightStationIndex = mtaNetwork[ alightLine ].indexOf( alightStation );
+	unionStationBoardingIndex = mtaNetwork[ boardLine ].indexOf( 'Union Station' );
+	unionStationAlightingIndex = mtaNetwork[ alightLine ].indexOf( 'Union Station' );
 
 	// if both stops are on the N line
 	if ( boardLine === 'n' && alightLine === 'n' ) {
@@ -74,17 +116,17 @@ const planTrip = function( boardLine, boardStation, alightLine, alightStation ) 
 		// assign index2 to where they alight the train
 		alightingIndex = mtaNetwork.n.indexOf( alightStation );
 
-		// assign to pass into sameLineStationAddition function
+		// assign to pass into sameLineStationAdditionPrint function
 		trainLine = mtaNetwork.n;
 
 		// if board[ i ] is less than than alight[ i ] then run this function
 		if ( boardingIndex < alightingIndex ) {
-			sameLineStationAddition( trainLine );
+			sameLineStationAdditionPrint( trainLine );
 		}
 
 		// if board[ i ] is greater than alight[ i ] then run this code
 		if ( boardingIndex > alightingIndex ) {
-			sameLineStationSubtraction( trainLine );
+			sameLineStationSubtractionPrint( trainLine );
 		}
 	}
 
@@ -96,17 +138,17 @@ const planTrip = function( boardLine, boardStation, alightLine, alightStation ) 
 		// assign index 2 to where they alight the train
 		alightingIndex = mtaNetwork.l.indexOf( alightStation );
 
-		// assign to pass into sameLineStationAddition function
+		// assign to pass into sameLineStationAdditionPrint function
 		trainLine = mtaNetwork.l;
 
 		// if board[ i ] is less than than alight[ i ] then run this function
 		if ( boardingIndex < alightingIndex ) {
-			sameLineStationAddition();
+			sameLineStationAdditionPrint();
 		}
 
 		// if board[ i ] is greater than alight[ i ] then run this code
 		if ( boardingIndex > alightingIndex ) {
-			sameLineStationSubtraction();
+			sameLineStationSubtractionPrint();
 		}
 	}
 
@@ -118,40 +160,184 @@ const planTrip = function( boardLine, boardStation, alightLine, alightStation ) 
 		// assign index 2 to where they alight the train
 		alightingIndex = mtaNetwork.six.indexOf( alightStation );
 
-		// assign to pass into sameLineStationAddition function
+		// assign to pass into sameLineStationAdditionPrint function
 		trainLine = mtaNetwork.six;
 
 		// if board[ i ] is less than than alight[ i ] then run this function
 		if ( boardingIndex < alightingIndex ) {
-			sameLineStationAddition();
+			sameLineStationAdditionPrint();
 		}
 
 		// if board[ i ] is greater than alight[ i ] then run this code
 		if ( boardingIndex > alightingIndex ) {
-			sameLineStationSubtraction();
+			sameLineStationSubtractionPrint();
 		}
 	}
 
-	// if board n and alight l OR board l and alight n
+	// if board n and alight l
 	if ( boardLine === 'n' && alightLine === 'l' ) {
-		console.log(`You're getting on at ${mtaNetwork[boardLine].indexOf( boardStation )}.`);
-		if ( mtaNetwork[boardLine].indexOf( boardStation ) < mtaNetwork[boardLine].indexOf( 'Union Station' ) ) {
-			increasingArrayIndexPrintFuction( boardLine, boardStation );
-		} else if ( mtaNetwork.indexOf( boardStation ) > nUnionIndex ) {
-			decreasingArrayIndexPrintFunction( boardLine, boardStation );
-		}
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
 	}
 
 	// if board n and alight six
-	if ( boardLine === 'N' && alightLine === '6' ) {
-
+	if ( boardLine === 'n' && alightLine === 'six' ) {
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
 	}
 
 	// if board l and alight six
-	if ( boardLine === 'L' && alightLine === '6' ) {
+	if ( boardLine === 'l' && alightLine === 'six' ) {
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
+	}
 
+	// if board l and alight n
+	if ( boardLine === 'l' && alightLine === 'n' ) {
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
+	}
+
+	// if board six and alight n
+	if ( boardLine === 'six' && alightLine === 'n' ) {
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
+	}
+
+	// if board six and alight l
+	if ( boardLine === 'six' && alightLine === 'l' ) {
+		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
+		// if input boarding station index is closer to 0 than Union Station
+		if ( boardingStationIndex < unionStationBoardingIndex ) {
+		console.log('boardingStationIndex < unionStationBoardingIndex');
+		console.log(boardingStationIndex + ' ' + unionStationBoardingIndex);
+			increasingBoardingArrayIndexPrint( boardLine, boardStation );
+		} // unless boarding station index is farther away from 0 than Union Station
+		else if ( boardingStationIndex > unionStationBoardingIndex ) {
+			console.log('boardingStationIndex > unionStationBoardingIndex');
+			console.log(boardingStationIndex, unionStationBoardingIndex);
+			decreasingBoardingArrayIndexPrint( boardLine, boardStation );
+		};
+		// if input alight station index is closer to 0 than Union Station
+		if ( alightStationIndex < unionStationAlightingIndex ) {
+			console.log('alightStationIndex < unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			increasingAlightArrayIndexPrint( alightLine, alightStation );
+		} // unless alighting station index is farther away from 0 than Union Station
+		else if ( alightStationIndex > unionStationAlightingIndex ) {
+			console.log('alightStationIndex > unionStationAlightingIndex');
+			console.log(alightStationIndex + ' ' + unionStationAlightingIndex);
+			decreasingAlightArrayIndexPrint( alightLine, alightStation );
+		};
 	}
 
 };
 
-planTrip('N', '8th', 'L', '1st');
+// planTrip( 'N', '8th', 'L', '1st' );
+// planTrip( 'L', '1st', 'N', '8th' );
+planTrip('N', 'Times Square', '6', '33rd');
