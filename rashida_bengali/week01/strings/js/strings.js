@@ -103,3 +103,25 @@ const notBad = function (sentence) {
 
 notBad("The food is not that bad.");
 notBad("Her drawing is not too bad.");
+
+//
+// const notBad = function (string) {
+//
+//   let badIndex;
+//   let notIndex
+//
+//   if (string.includes('not') && string.includes('bad')) {
+//      badIndex = string.indexOf('bad');
+//      notIndex = string.indexOf('not');
+//   } else {
+//       return string;
+//   }
+//     if (badIndex>notIndex) {
+//       let beforeNot = string.substring(0, notIndex);
+//       let afterBad = string.substring(badIndex+3, string.length);
+//       let newStr = beforeNot + 'good' + afterBad;
+//       return newStr;
+//     }
+// };
+//
+// console.log(notBad('The dinner is not that bad!'));
