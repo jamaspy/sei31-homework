@@ -15,8 +15,6 @@ const sergeSays = function(input){
   }
 
   return "Whatever."
-
-  
 }
 
 console.log(sergeSays(undefined));

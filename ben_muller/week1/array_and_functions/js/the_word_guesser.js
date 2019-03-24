@@ -31,6 +31,8 @@ const changeLetter = function( letter ){
 const checkForWin = function ( guessedWord ){
   return word.join('') === guessed.join('');
 };
+
+
   
 //shows the progress board on the html
 let progress = document.createElement("h2");
