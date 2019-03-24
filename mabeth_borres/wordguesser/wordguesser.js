@@ -313,6 +313,28 @@ const showLetter = function(str) {
 
 };
 
+const drawHangman = function() {
+console.log("     ++++++++++++++");
+console.log("     +            +");
+console.log("     +       \\\   OOO   //");
+console.log("	 +        \\\ O   O //");
+console.log("     +         \\\ OOO //");	 
+console.log("	 +          \\\===//");
+console.log("	 +           {=}");
+console.log("	 +           {=}");
+console.log("	 +          //=\\");
+console.log("	 +         //   \\");
+console.log("	 +        //     \\");
+console.log("	 +       //       \\");
+console.log("	 +      dd         bb");
+console.log("	 +");
+console.log("	 +");
+console.log("	 +");
+console.log("============");
+console.log(`>> ${wordToGuess} <<`);        
+console.log("============");		
+};
+
 const clearStorage = function () {
   //should be clean
   wordToGuess = ""; //contains the selected random word
@@ -331,7 +353,7 @@ const setUpWord = function() {
   const indRandom = Math.floor(Math.random() * wordsDeck.length);
   wordToGuess = wordsDeck[indRandom].toUpperCase();
 
-  console.log("Secret Recipe is " + wordToGuess);
+  //console.log("Secret Recipe is " + wordToGuess);
   //console.log(wordToGuess.length)
 
   for (let i = 1; i <= wordToGuess.length; i++) {
@@ -349,6 +371,7 @@ const setUpWord = function() {
 
   }
 
+  drawHangman();
 };
 
 setUpWord();

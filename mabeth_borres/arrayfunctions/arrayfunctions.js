@@ -1,6 +1,6 @@
 // Homework by Mabeth Borres of SEI 31
 
-// ALL MY HOMEWORK can be accessed running at:
+// MY HOMEWORK can be accessed running at:
 // https://mmborres.github.io/homework/arrayfunctions.html
 
 
@@ -112,7 +112,7 @@ const reverseString = function (str) {
   //console.log(str.split());
   //console.log(str.split().reverse());
   console.log(newStr);
-
+  
   return newStr;
 };
 
@@ -128,9 +128,9 @@ const findLongestWord = function (array) {
   if (array instanceof Array) {
 	longestWord = array[0].trim();
 	let str1len = longestWord.length;
-
+        
     for (let i=1; i<array.length; i++) {
-
+		
         let str2len = array[i].trim().length;
 
         if (str2len>str1len) {
@@ -176,18 +176,18 @@ filterLongWords(["adghdnfksdf", "hds", "hfkdshfkshf", "hdksh", "fhsdhfksdhfhsdjf
 
 const filterLongWordsHTML = function(array, num) {
 	let printArray = "[ ";
-
+	
 	let outpArray = filterLongWords(array, num);
-
+	
 	for (let i=0; i<outpArray.length; i++) {
 		printArray = printArray.concat(`"${outpArray[i].trim()}"`);
         if(i<outpArray.length-1) {
 			     printArray = printArray.concat(", ");
-		    }
+		    } 
     }
-
+	
 	printArray = printArray.concat(" ]");
-
+	
 	return printArray;
 };
 
@@ -198,116 +198,152 @@ const ans = "<b>ANSWER >> </b>";
 let printMsg = "";
 
 const handleMaxOfTwoNumbers = function() {
-  const num1 = document.getElementById("maxOfTwoNumbersValue1").value;
-  const num2 = document.getElementById("maxOfTwoNumbersValue2").value;
-  printMsg = maxOfTwoNumbersHTML(parseInt(num1), parseInt(num2));
-  document.getElementById("maxOfTwoNumbers").innerHTML = ans + printMsg;
+	const num1 = document.getElementById("maxOfTwoNumbersValue1").value;
+	const num2 = document.getElementById("maxOfTwoNumbersValue2").value;
+	
+	if (num1==="" || num2==="") {
+		return; //cannot be empty
+	} else if ( Number.isInteger(parseInt(num1))===false 
+		|| Number.isInteger(parseInt(num2))===false ) {
+		document.getElementById("maxOfTwoNumbers").innerHTML = "";
+		return;
+	}
+	
+	printMsg = maxOfTwoNumbersHTML(parseInt(num1), parseInt(num2));
+	document.getElementById("maxOfTwoNumbers").innerHTML = ans + printMsg;
 };
 
 const handleMaxOfThree = function() {
-  const num1 = document.getElementById("maxOfThreeValue1").value;
-  const num2 = document.getElementById("maxOfThreeValue2").value;
-  const num3 = document.getElementById("maxOfThreeValue3").value;
-  printMsg = maxOfThree(parseInt(num1), parseInt(num2), parseInt(num3));
-  document.getElementById("maxOfThree").innerHTML = ans + printMsg;
+	const num1 = document.getElementById("maxOfThreeValue1").value;
+	const num2 = document.getElementById("maxOfThreeValue2").value;
+	const num3 = document.getElementById("maxOfThreeValue3").value;
+	
+	if (num1==="" || num2==="" || num3==="") {
+		return; //cannot be empty
+	} else if ( Number.isInteger(parseInt(num1))===false 
+		|| Number.isInteger(parseInt(num2))===false
+		|| Number.isInteger(parseInt(num3))===false ) {
+		document.getElementById("maxOfTwoNumbers").innerHTML = "";
+		return;
+	}
+	
+	printMsg = maxOfThree(parseInt(num1), parseInt(num2), parseInt(num3));
+	document.getElementById("maxOfThree").innerHTML = ans + printMsg;
 };
 
 const handleIsVowel = function() {
-  const str = document.getElementById("isVowelValue").value;
-  printMsg = isVowel(str);
-  document.getElementById("isVowel").innerHTML = ans + printMsg;
+	const str = document.getElementById("isVowelValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	}
+	printMsg = isVowel(str);
+	document.getElementById("isVowel").innerHTML = ans + printMsg;
 };
 
 const handleSumArray = function() {
-  const arraySum = [];
-  var elements = document.getElementsByName("values");
-
-  for (let i=0; i<elements.length; i++) {
-	  console.log(elements[i].value + " " + elements[i].checked);
-
-	  if (elements[i].checked===true) {
-		  arraySum.push(parseInt(elements[i].value));
-	  }
-  }
-
-  console.log(arraySum);
-
-  printMsg = sumArray(arraySum);
-
-  document.getElementById("sumArray").innerHTML = ans + " Sum of Array values is " + printMsg;
+	const arraySum = [];
+	var elements = document.getElementsByName("values");
+  
+	for (let i=0; i<elements.length; i++) {
+		console.log(elements[i].value + " " + elements[i].checked);
+	  
+		if (elements[i].checked===true) {
+			arraySum.push(parseInt(elements[i].value));
+		}
+	}
+  
+	console.log(arraySum);
+  
+	printMsg = sumArray(arraySum);
+  
+	document.getElementById("sumArray").innerHTML = ans + " Sum of Array values is " + printMsg;
 };
 
 //sumArray() and multiplyArray
 
 const handleMultiplyArray = function() {
-  const arrayProd = [];
-  let elements = document.getElementsByName("values");
-
-  for (let i=0; i<elements.length; i++) {
-	  //console.log(elements[i].value + " " + elements[i].checked);
-
-	  if (elements[i].checked===true) {
-		  arrayProd.push(parseInt(elements[i].value));
-	  }
-  }
-
-  console.log(arrayProd);
-
-  printMsg = multiplyArray(arrayProd);
-
-  document.getElementById("multiplyArray").innerHTML = ans + " Product of Array values is " + printMsg;
+	const arrayProd = [];
+	let elements = document.getElementsByName("values");
+  
+	for (let i=0; i<elements.length; i++) {
+		//console.log(elements[i].value + " " + elements[i].checked);
+	  
+		if (elements[i].checked===true) {
+			arrayProd.push(parseInt(elements[i].value));
+		}
+	}
+  
+	console.log(arrayProd);
+  
+	if (arrayProd.length===0) {
+		document.getElementById("multiplyArray").innerHTML = "";
+	}
+	
+	printMsg = multiplyArray(arrayProd);
+  
+	document.getElementById("multiplyArray").innerHTML = ans + " Product of Array values is " +printMsg;
 };
 
 
 const handleReverseString = function() {
-  const str = document.getElementById("reverseStringValue").value;
-  printMsg = reverseString(str);
-  document.getElementById("reverseString").innerHTML = ans + printMsg;
+	const str = document.getElementById("reverseStringValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	}
+	printMsg = reverseString(str);
+	document.getElementById("reverseString").innerHTML = ans + printMsg;
 };
 
 const handleFindLongestWord = function() {
-  const arrayProd = [];
-  let elements = document.getElementsByName("longWords");
-
-  for (let i=0; i<elements.length; i++) {
-	  //console.log(elements[i].value + " " + elements[i].checked);
-
-	  if (elements[i].checked===true) {
-		  arrayProd.push(elements[i].value);
-	  }
-  }
-
-  var elems = document.getElementsByName("findLongestWord");
-
-  for (let i=0; i<elems.length; i++) {
-	  //console.log(elems[i].value);
-
-	  if (elems[i].checked!=="") {
-		  arrayProd.push(elems[i].value);
-	  }
-  }
-
-  console.log(arrayProd);
-
-  printMsg = findLongestWord(arrayProd);
-
-  document.getElementById("findLongestWord").innerHTML = ans + printMsg;
+	const arrayProd = [];
+	let elements = document.getElementsByName("longWords");
+  
+	for (let i=0; i<elements.length; i++) {
+		//console.log(elements[i].value + " " + elements[i].checked);
+	  
+		if (elements[i].checked===true) {
+			arrayProd.push(elements[i].value);
+		}
+	}
+  
+	var elems = document.getElementsByName("findLongestWord");
+  
+	for (let i=0; i<elems.length; i++) {
+		//console.log(elems[i].value);
+	  
+		if (elems[i].checked!=="") {
+			arrayProd.push(elems[i].value);
+		}
+	}
+  
+	console.log(arrayProd);
+  
+	printMsg = findLongestWord(arrayProd);
+  
+	document.getElementById("findLongestWord").innerHTML = ans + "Length of longest word is " + printMsg;
 };
 
 const handleFilterLongWords = function() {
 	const arrayProd = [];
-  let elements = document.getElementsByName("filterLongWords");
-
-  for (let i=0; i<elements.length; i++) {
-	  //console.log(elements[i].value + " " + elements[i].checked);
-
-	  if (elements[i].checked===true) {
-		  arrayProd.push(elements[i].value);
-	  }
-  }
-
-  const num = document.getElementById("filterMin").value;
-  printMsg = filterLongWordsHTML(arrayProd, parseInt(num));
-  document.getElementById("filterLongWords").innerHTML = ans + printMsg;
+	let elements = document.getElementsByName("filterLongWords");
+  
+	for (let i=0; i<elements.length; i++) {
+		//console.log(elements[i].value + " " + elements[i].checked);
+	  
+		if (elements[i].checked===true) {
+			arrayProd.push(elements[i].value);
+		}
+	}
+  
+	const num = document.getElementById("filterMin").value;
+	
+	if (Number.isInteger(parseInt(num))===false) {
+		document.getElementById("filterLongWords").innerHTML = "";
+		return;
+	}
+	
+	printMsg = filterLongWordsHTML(arrayProd, parseInt(num));
+	document.getElementById("filterLongWords").innerHTML = ans + printMsg;
 
 };
+
