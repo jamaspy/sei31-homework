@@ -1,9 +1,9 @@
 // MTA LAB
 
 const trainTracks = {
-  nLine: ['Times Square', '34th', '28th(n)', '23rd(n)', 'Union Square', '8th(n)'],
-  lLine: ['8th(l)', '6th', 'Union Square', '3rd', '1st'],
-  sixLine: ['Grand Central', '33rd', '28th(six)', '23rd(six)', 'Union Square', 'Astor Place']
+  nLine: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  lLine: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  sixLine: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
 };
 
 let numOfStops = 0; //number of stops in the trip counter 
@@ -11,8 +11,9 @@ let numOfStops = 0; //number of stops in the trip counter
 
 let loops = false; // knows when to return num of stops to the console
 
-const stopsLog = function( numOfStops ) {
-  return numOfStops === 1 ? console.log(`${numOfStops} stop total, Enjoy your ride!`): console.log(`${numOfStops} stops total, Enjoy your ride!`)
+const stopsLog = function( numbOfStops ) {
+  numbOfStops === 1 ? console.log(`${numbOfStops} stop total, Enjoy your ride!`): console.log(`${numbOfStops} stops total, Enjoy your ride!`);
+  numOfStops = 0;
 };
 
 const planTrip = function( lineA, start, lineB, stop ) {
@@ -42,7 +43,7 @@ const planTrip = function( lineA, start, lineB, stop ) {
     loops = true;
     if ( start === 'Union Square'){ //if start is UnionSquare then we are essentially on the same line
       planTrip( lineB, 'Union Square', lineB, stop );
-    } else if ( stop === 'Union Square' ){ // same for stop 
+    } else if ( stop === 'Union Square' ){ //if stop is UnionSquare === same 
       planTrip( lineA, start, lineA, 'Union Square' );
     } else {
     planTrip( lineA, start, lineA, 'Union Square' ); 
@@ -62,5 +63,4 @@ const planTrip = function( lineA, start, lineB, stop ) {
 //planTrip('nLine','8th(n)','nLine','8th(n)')
 //planTrip('sixLine', 'Union Square', 'nLine', '8th(n)')
 //planTrip('nLine', '23rd(n)', 'nLine', '8th(n)')
-
 
