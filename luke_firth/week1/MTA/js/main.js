@@ -1,8 +1,8 @@
 console.log("Running.........");
 
-const subway = {                                                                    //initialising object array
-  redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],         //red line array     //this has been changed because
-  greenLine: ["8th", "6th", "Union Square", "3rd", "1st"],                          //green line array   //the letters were blowing my mind
+const subway = {                                                                          //initialising object array
+  redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],               //red line array     //this has been changed because
+  greenLine: ["8th", "6th", "Union Square", "3rd", "1st"],                                //green line array   //the letters were blowing my mind
   blueLine: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]      //blue line array
 };
 
@@ -14,7 +14,7 @@ let result = null;        //defining and empty variale to store the result
 
 const howManyStops = function(startline, startStop, endLine, endStop) {  //howManyStops takes startLine, startStop, endLine, endStop.
 
-  let start = subway[startline];      //this declaration allows the function to the array line passed in// |redline(Array)|greenLine(Array)|blueLine(Array)|
+  let start = subway[startline];      //this declaration allows the function to store the passed in line array// |redline(Array)|greenLine(Array)|blueLine(Array)|
   let end = subway[endLine];          //this does the same thing but for the second array passed in// |redline(Array)|greenLine(Array)|blueLine(Array)|
   //console.log(subway[startline]);   //testing to see if start variable is stored from user's subway line input
   //console.log(subway[endLine]);     //testing to see if endline variable is stored from user's subway endLine input
@@ -25,13 +25,13 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
         startIndex = i;
         //console.log(startIndex);//test        //once [i] == startStop in the array, i(index in array) is stored in startIndex
       }
-      for (let i = 0; i < end.length; i++)      //now we have another loop for the haters!!
-      if (end[i] === endStop) {                 //if [i] iteration is == end stop input wooooo!!
+      for (let i = 0; i < end.length; i++)      //another loop for the haters!!
+      if (end[i] === endStop) {                 //if [i] iteration is == end stop store index in endIndex
         endIndex = i;
         //console.log(endIndex);//test          //happy days store that index in endIndex #Winning.
       }
       result = Math.abs(startIndex - endIndex); //now hopefully we can store the difference between the 2 stored indexes using Math.abs
-      console.log(result);                      //#MathDoesNotGiveYouAbs
+      console.log(`This trip has ${result} stops`); //#MathDoesNotGiveYouAbs
       return result;                            //This beautiful function "Math.abs" takes 2 perameters
     }                                           //stores the difference in "result" and then outputs to the console using a classic console.log
   } else {
@@ -52,21 +52,29 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
       }
       if (end[i] === 'Union Square') {         //><><><><><><><><><><><><><><><><><><><><
         mid2 = i;                              //index stored!!!!!!!!!!! omggggg woooo!!!!
-        //console.log(endIndex);//test         //now its time to add the 2 trips together using the difference between the indexes
+        //console.log(endIndex);//test         //now below we add the 2 trips together using the difference between the indexes
       }
-    };
+    }
     result = (Math.abs(startIndex - mid1) + Math.abs(mid2 - endIndex)); //Here we add the 2 trips together storing the total of
-    console.log(result);                                                //the combine 2 trips
+    console.log(`This trip has ${result} stops`);                       //the combine 2 trips
     return result;                                                      //returning the result of the total stops
-  };                                                                    //I Quit :)
+  };
 };
+howManyStops('blueLine', 'Grand Central', 'blueLine', 'Union Square');  //single line trip
+howManyStops('greenLine', '1st', 'redLine', '34th');                    //multi line trip
+howManyStops('redLine', 'Times Square', 'blueLine', 'Grand Central');   //multi line trip 2
 
-howManyStops('greenLine', '1st', 'redLine', '34th');
+howManyStops('blueLine', 'Astor Place', 'blueLine', 'Central Station');  //broken
+
+
+//Lines for reference   
+
 //redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
 //greenLine: ["8th", "6th", "Union Square", "3rd", "1st"],
 //blueLine: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]
 
 /*
+
 Create a program that models a simple subway system.
 
 The program takes the line and stop that a user is getting on at and the line and
