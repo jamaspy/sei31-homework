@@ -1,4 +1,4 @@
-console.log("Running.....thank.god.for.that.ay!....");
+console.log("Running.........");
 
 const subway = {                                                                    //initialising object array
   redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],         //red line array     //this has been changed because
@@ -6,21 +6,20 @@ const subway = {                                                                
   blueLine: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]      //blue line array
 };
 
-let startIndex = null;    //defining an empty variable to store the starting index for evaluating result
-let endIndex = null;      //defining and empty variale to store the end index for evaluating result
+let startIndex = null;    //defining an empty variable to store the starting index
+let endIndex = null;      //defining and empty variale to store the end index
 let midIndex1 = null;     //defining and empty variale to store Union Square changeover if needed
 let midIndex2 = null;     //defining and empty variale to hold the Union Square Start point for second half of journey
 let result = null;        //defining and empty variale to store the result
 
-const howManyStops = function(startline, startStop, endLine, endStop) {  //howManyStops takes start line, get on station, end line, get off
+const howManyStops = function(startline, startStop, endLine, endStop) {  //howManyStops takes startLine, startStop, endLine, endStop.
 
-  let start = subway[startline];  //this declaration allows the function to find the line using user input // |redline(Array)|greenLine(Array)|blueLine(Array)|
-  let end = subway[endLine];      //this declaration allows the function to find the line using user input
-
+  let start = subway[startline];      //this declaration allows the function to the array line passed in// |redline(Array)|greenLine(Array)|blueLine(Array)|
+  let end = subway[endLine];          //this does the same thing but for the second array passed in// |redline(Array)|greenLine(Array)|blueLine(Array)|
   //console.log(subway[startline]);   //testing to see if start variable is stored from user's subway line input
   //console.log(subway[endLine]);     //testing to see if endline variable is stored from user's subway endLine input
 
-  if (startline === endLine) {                  //ok holy smokes!!!!! 1st step. If we are chillen on the the same line we can just calculate the distance between
+  if (startline === endLine) {                  //Ok 1st step. If we are chillen on the the same line we can just calculate the distance between
     for (let i = 0; i < start.length; i++) {    //the startStop and the endStop without getting fancy and changing lines!!!
       if (start[i] === startStop) {             //if startLine is == to endLine!!! bingo we dont have to change lines :) happy days!
         startIndex = i;
@@ -33,37 +32,39 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
       }
       result = Math.abs(startIndex - endIndex); //now hopefully we can store the difference between the 2 stored indexes using Math.abs
       console.log(result);                      //#MathDoesNotGiveYouAbs
-      return result;                            //Hooley Dooley Mate we have a winner. This beautiful function "Math.abs" takes 2 perameters
+      return result;                            //This beautiful function "Math.abs" takes 2 perameters
     }                                           //stores the difference in "result" and then outputs to the console using a classic console.log
-  } else {                                      //not over yet!!!!!!!
-    for (let i = 0; i < start.length; i++) {    //ok so we are not actually changing stations ....hehehehe
-      if (start[i] === startStop) {             //all we are doing is another for loop for the 'multi line path' and
-        startIndex = i;
-        //console.log(startIndex);//test        //adding the 2 different line indexes together.
-      }                                         //once the [i] iteration is = startStop in the line array passed into the function
-      if (start[i] === "Union Square") {        //it gets stored in the startIndex variable
+  } else {
+    for (let i = 0; i < start.length; i++) {
+      if (start[i] === startStop) {             //Here is another for loop to grab the first stop and store its index in startIndex
+        startIndex = i;                         //then we are going to get the unionSquare index of that line and store it as mid1
+        //console.log(startIndex);//test        //That is the first half of the journey
+      }                                         //once the [i] iteration is = 'Union Square' in the line array passed into the function
+      if (start[i] === 'Union Square') {        //it gets stored in the mid1 variable
         mid1 = i;
-        //console.log(mid1);//test              //if [i] iteration is = Union Square store the index in the mid1 variable
-      }                                         //this is so we have 2 index references to add the other half of the trip together
-    }                                         //this is a closing curley brace for the first half of out majestic train ride :) woo!
-    for (let i = 0; i < end.length; i++) {      //this for loop iterates over the 2nd half of the trip //there is also alot more that i have not pointed out.
-      if (end[i] === endStop) {                 //if [i] = to the endStop passed to the function
-        endIndex = i;                           //store it in endIndex
+        //console.log(mid1);//test              //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      }                                         //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }                                           //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    for (let i = 0; i < end.length; i++) {      //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      if (end[i] === endStop) {                 //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        endIndex = i;                           //same as above ^^^^^^^^ but for the second half of the trip ^^^^^^^^^^^^^^^^^^^^^^^^^^^
         //console.log(endIndex);//test
       }
-      if (end[i] === "Union Square") {         //if [i] = to UnionSquare store the index in mid2
+      if (end[i] === 'Union Square') {         //><><><><><><><><><><><><><><><><><><><><
         mid2 = i;                              //index stored!!!!!!!!!!! omggggg woooo!!!!
         //console.log(endIndex);//test         //now its time to add the 2 trips together using the difference between the indexes
       }
     };
-    result = (Math.abs(startIndex - mid1) + Math.abs(mid2 - endIndex)); //storing the sum of the difference in result
-    console.log(result);                       //another classic console.log
-    return result;                             //returning the result
-  };                                           //
+    result = (Math.abs(startIndex - mid1) + Math.abs(mid2 - endIndex)); //Here we add the 2 trips together storing the total of
+    console.log(result);                                                //the combine 2 trips
+    return result;                                                      //returning the result of the total stops
+  };                                                                    //I Quit :)
 };
 
-howManyStops('redLine', '28th', 'blueLine', '23rd'); //sending perameters to the function
-
+howManyStops('greenLine', '1st', 'redLine', '34th');
+//redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
+//greenLine: ["8th", "6th", "Union Square", "3rd", "1st"],
+//blueLine: ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]
 
 /*
 Create a program that models a simple subway system.
