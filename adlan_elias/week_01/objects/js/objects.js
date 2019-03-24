@@ -217,9 +217,9 @@ const validateCreditCard = function (cardnumber) {
 
 
 
-console.log(validateCreditCard('9999777788880000'));
-console.log(validateCreditCard('6666666666661666'));
-console.log(validateCreditCard('a92332119c011112'));
+console.log(validateCreditCard('9999-7777-8888-0000'));
+console.log(validateCreditCard('6666-6666-6666-1666'));
+console.log(validateCreditCard('a923-3211-9c01-1112'));
 console.log(validateCreditCard('4444444444444444'));
 console.log(validateCreditCard('1211111111111112'));
 console.log(validateCreditCard(9999-9999-8888-0000));
