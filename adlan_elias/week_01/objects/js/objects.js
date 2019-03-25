@@ -166,38 +166,50 @@ a923-3211-9c01-1112 invalid characters
 
 const validateCreditCard = function (cardnumber) {
 
-  if (cardnumber.length !== 16) {
-    return false;
+  let cardnumberNoDash = '';
+  for (let i = 0; i < cardnumber.length; i++) {
+    if (cardnumber[i] !== '-') {
+      cardnumberNoDash += cardnumber[i];
+    }
   }
 
-  for (let i = 0; i < cardnumber.length; i++){
-    let currentNumber = cardnumber[i];
+  if (cardnumberNoDash.length !== 16) {
+    return false;
+    // return `Does not meet length requirement`
+  }
+
+  for (let i = 0; i < cardnumberNoDash.length; i++){
+    let currentNumber = cardnumberNoDash[i];
 
     currentNumber = Number.parseInt(currentNumber);
     if(!Number.isInteger(currentNumber)){
       return false
+      // return `Contains letters that are not a number`
     }
   }
 
-  let obj = {};
-  for (let i = 0; i < cardnumber.length; i++) {
-    obj[cardnumber[i]] = true;
+  let holding = {};
+
+  for (let i = 0; i < cardnumberNoDash.length; i++) {
+    holding[cardnumberNoDash[i]] = true;
   }
-  if(Object.keys(obj).length < 2){
+  if(Object.keys(holding).length < 2){
     return false;
   }
 
-  if (cardnumber[cardnumber.length - 1] % 2 !== 0) {
+  if (cardnumberNoDash[cardnumberNoDash.length - 1] % 2 !== 0) {
     return false;
+    // return `Contains too many same digits`
   }
 
   let sum = 0;
 
-  for(var i = 0; i < cardnumber.length; i++){
-    sum += Number(cardnumber[i]);
+  for(var i = 0; i < cardnumberNoDash.length; i++){
+    sum += Number(cardnumberNoDash[i]);
   }
   if(sum <= 16){
     return false;
+    // return `Total does not meet 16`
   }
 
   return true;
@@ -205,12 +217,14 @@ const validateCreditCard = function (cardnumber) {
 
 
 
-console.log(validateCreditCard('9999777788880000'));
-console.log(validateCreditCard('6666666666661666'));
-console.log(validateCreditCard('a92332119c011112'));
+console.log(validateCreditCard('9999-7777-8888-0000'));
+console.log(validateCreditCard('6666-6666-6666-1666'));
+console.log(validateCreditCard('a923-3211-9c01-1112'));
 console.log(validateCreditCard('4444444444444444'));
 console.log(validateCreditCard('1211111111111112'));
 console.log(validateCreditCard(9999-9999-8888-0000));
+console.log(validateCreditCard('6666666666666661'));
+console.log(validateCreditCard('6134-6342-6456-6660'));
 
 /*avaScript Bank
 In this homework, you'll create a basic bank in Javascript. The bank has many accounts and the following capabilities that you need to write.
@@ -230,3 +244,72 @@ to help you see your code working.
 
 You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some
  accounts, show the total balance, make some deposits and withdrawals, show the new total balance.*/
+
+// const accounts = [
+//   {currBalance:2000, name: 'Tem'}
+//   {currBalance:3000, name: 'Tom'}
+//   {currBalance:4000, name: 'Tam'}
+//   {currBalance:5000, name: 'Tim'}
+// ];
+
+const Account = function (name, balance) {
+  this.name = name;
+  this.balance = balance;
+
+  console.log (`Name: ${name}; Current balance: $${balance}`)
+}
+
+Account.prototype.deposit = function (amount) {
+  if (this.isPositive(amount)) {
+    this.balance += amount;
+    console.log (`Deposit: ${this.name} new balance is $${this.balance}.`);
+    return true;
+  }
+  return false;
+}
+
+Account.prototype.withdraw = function (amount) {
+  if (this.isAllowed(amount)) {
+    this.balance -= amount;
+    console.log (`Withdrawal: ${this.name} new balance is $${this.balance}.`);
+    return true;
+  }
+  return false;
+}
+
+Account.prototype.transfer = function(amount, account) {
+  if (this.withdraw(amount) && account.deposit(amount)) {
+    console.log(`Transfer: $${amount} has been moved from ${this.name} to ${account.name}`);
+    return true;
+  }
+  return false;
+}
+
+Account.prototype.isPositive = function(amount) {
+  const positive = amount > 0;
+  if (!positive) {
+    console.log('Amount must be positive!');
+    return false;
+  }
+  return true;
+}
+
+Account.prototype.isAllowed = function(amount) {
+  if (!this.isPositive(amount)) return false;
+
+  const allowed = this.balance - amount >= 0;
+  if (!allowed) {
+    console.log('You have insufficent funds!');
+    return false;
+  }
+  return true;
+}
+
+const aAccount = new Account ('A', 500);
+const bAccount = new Account ('B', 1000);
+
+aAccount.transfer(400, bAccount);
+
+aAccount.deposit(2000);
+
+aAccount.withdraw(4000);
