@@ -12,3 +12,4 @@ const totalPrice = function ( obj ){
 };
 
 console.log(totalPrice(cartForParty))
+

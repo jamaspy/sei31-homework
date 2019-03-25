@@ -196,6 +196,7 @@ const validateCreditCard = function(credit){
   let maxNumb = Math.max.apply(null, newArray)
   let minNumb = Math.min.apply(null, newArray) //Order always matters
   let lastDigit = newArray[newArray.length-1] % 2 //last digit [-1] does not work in Javascript 
+  //I should have just used array.pop()
   
   if(sumb > 16 && lastDigit == 0 && maxNumb !== minNumb){
     validity.valid = true;    
