@@ -44,12 +44,12 @@ const planTrip = function(line1, station1, line2, station2) {
   if (unionSquareSecond > stop) {
     for (var i = stop; i < unionSquareSecond; i++) {
       numberOfStopsSecond++;
-      stopNames2 = stopNames2 += stations2[i] + ", ";
+      stopNames2 = stations2[i] + ", " + stopNames2;
     }
   } else {
     for (var i = stop; i > unionSquareSecond; i--) {
       numberOfStopsSecond++;
-      stopNames2 = stopNames2 += stations2[i] + ", ";
+      stopNames2 = stations2[i] + ", " + stopNames2;
     }
   }
 
@@ -57,11 +57,11 @@ const planTrip = function(line1, station1, line2, station2) {
 
   console.log(`You must travel through the following stops on the ${line1} line: ${stopNames1}`);
   if (numberOfStopsSecond > 0) {
-    console.log(`Your journey continues through the following stops on the ${line2} line: ${stopNames2}`);
+    console.log(`Change at Union Square. Your journey continues through the following stops on the ${line2} line: ${stopNames2}`);
   }
   console.log(`You have ${stops} stops in total`);
 };
 
 planTrip('N', 'Times Square', 'N', 'Union Square');
 planTrip('N', 'Times Square', '6', '33rd');
-planTrip('6', '33rd', 'N', '8th');
+planTrip('6', '33rd', 'L', '8th');
