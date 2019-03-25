@@ -4,7 +4,7 @@ console.log( "--------------------" );
 const mtaNetwork = {
 	n: [ '8th', 'Union Station', '23rd', '28th', '34th', 'Times Square' ],
 	l: [ '1st', '3rd', 'Union Station', '6th', '8th' ],
-	six: [ 'Astor Place', 'Union Station', '23rd', '28th', '33rd', 'Grand Central' ],
+	6: [ 'Astor Place', 'Union Station', '23rd', '28th', '33rd', 'Grand Central' ],
 };
 
 const sameLineIncreasingArrayIndexPrint = function( trainLine, trainStation ) {
@@ -59,13 +59,6 @@ const decreasingArrayIndexPrint = function( trainLine, trainStation ) {
 // main function called ////////////////////////////////////////////////////////
 const planTrip = function( boardLine, boardStation, alightLine, alightStation ) {
 
-	// converting input of '6' to 'six' for array referencing
-	if ( boardLine === '6' ) {
-		boardLine = 'six';
-	} else if ( alightLine === '6' ) {
-		alightLine = 'six';
-	};
-
 	// turn inputs into capitals so don't need to catch both caps and non caps in each if case.
 	boardLine = boardLine.toLowerCase();
 	alightLine = alightLine.toLowerCase();
@@ -76,7 +69,7 @@ const planTrip = function( boardLine, boardStation, alightLine, alightStation ) 
 	unionStationAlightingIndex = mtaNetwork[ alightLine ].indexOf( 'Union Station' );
 
 	// if both stops are on the N line
-	if ( boardLine === 'n' && alightLine === 'n' || boardline === 'l' && alightLine === 'l' || boardline === 'six' && alightLine === 'six' ) {
+	if ( boardLine === 'n' && alightLine === 'n' || boardline === 'l' && alightLine === 'l' || boardline === '6' && alightLine === '6' ) {
 
 		// if board[ i ] is less than than alight[ i ] then run this function
 		if ( boardingStationIndex < alightStationIndex ) {
@@ -90,8 +83,8 @@ const planTrip = function( boardLine, boardStation, alightLine, alightStation ) 
 	}
 
 
-	// if board n and alight six
-	if ( boardLine === 'n' && alightLine === 'six' ) {
+	// if board n and alight 6
+	if ( boardLine === 'n' && alightLine === '6' ) {
 		console.log( `You're getting on Line ${ boardLine.toUpperCase() }, Station: ${ boardStation }.` );
 		// if input boarding station index is closer to 0 than Union Station
 		if ( boardingStationIndex < unionStationBoardingIndex ) {
