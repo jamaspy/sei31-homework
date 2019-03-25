@@ -31,7 +31,7 @@ const getStops = function (line, startStop, endStop) {
 
   if (startStopIndex < endStopIndex) {
     for (let i = startStopIndex + 1; i <= endStopIndex; i++) {
-      stopsString += lineArray[i];
+      stopsString += lineArray[i] + ', ';
       stopsCount = stopsCount + 1;
     }
   } else {
