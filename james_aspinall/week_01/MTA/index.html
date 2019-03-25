@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
 
-  <title>MTA Trip Planner</title>
+  <!-- FavIcon Link -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>MTA Trip Plan</title>
 </head>
 
 <body>
@@ -24,38 +28,61 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
 
-      </div>
-      <div class="col-md-4 mt-5">
+      <div class="col-md-3"></div>
+
+      <!-- Departure Inputs -->
+      <div class="col-md-3">
         <form>
           <div class="form-group">
             <label for="startDestination">Departure Line</label>
-            <input type="text" class="form-control" id="departureLine" aria-describedby="departure line" placeholder="Enter your departure line.">
+            <select class="form-control" id="departureLine">
+              <option>N</option>
+              <option>L</option>
+              <option>6</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="startDestination">Departure Station</label>
-            <input type="text" class="form-control" id="departureStation" aria-describedby="departure line" placeholder="Enter your departure station.">
+            <input type="text" class="form-control" id="departureStation" aria-describedby="departure line" placeholder="Enter your departure line.">
           </div>
+        </form>
+      </div>
+
+      <!-- Arrival Inputs -->
+      <div class="col-md-3">
+        <form>
           <div class="form-group">
             <label for="startDestination">Arrival Line</label>
-            <input type="text" class="form-control" id="arrivalLine" aria-describedby="departure line" placeholder="Enter your arrival line.">
+            <select class="form-control" id="arrivalLine">
+              <option>N</option>
+              <option>L</option>
+              <option>6</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="startDestination">Arrival Station</label>
-            <input type="text" class="form-control" id="arrivalStation" aria-describedby="departure line" placeholder="Enter your arrival station.">
+            <input type="text" class="form-control" id="arrivalStation" aria-describedby="departure line" placeholder="Enter your departure line.">
           </div>
-          <div class="form-group">
-            <label for="tripInfo">Here Is Your Trip Information.</label>
-            <textarea class="form-control" id="tripInfo" rows="3"></textarea>
-          </div>
-          <input class="btn btn-secondary btn-lg" name="Submit" type="submit" value="Submit" onclick="getFormData()" />
-
         </form>
       </div>
-      <div class="col-md-4">
 
+      <div class="col-md-3"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+
+      <div class="col-md-4">
+        <div class="form-group mt-5">
+          <label for="tripInfo"></label>
+          <textarea class="form-control mt-2" placeholder="Your travel information will appear here." id="tripInfo" rows="9"></textarea>
+        </div>
+        <input id="changeColor" class="btn btn-secondary btn-lg" type="button" value="Submit" onclick="getFormData()" />
       </div>
+
+
+      <div class="col-md-4"></div>
     </div>
   </div>
 
