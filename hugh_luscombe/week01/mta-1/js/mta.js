@@ -5,29 +5,6 @@ const trainLines = {
   '6': ['Grand Central','33rd','28th','23rd','Union Square','Astor Place']
 }
 
-//
-// fruits.forEach(function(item, index, array) {
-//   console.log(item, index);
-// });
-
-// for (let i = 0; i < trainLines[line1].length; i++) {
-//   trainLines[line1]
-// }
-
-// if (trainLines[line1].indexOf('Union Square')) {
-//
-// } else {
-//
-// }
-
-// if index is smaller go towards union square
-// if index is larger go backwards towards union square
-//
-// counting stops? return i ?
-//
-// for listing stops tostring then split at “,”, .join with “, “ - possible??
-
-
 //main function
 const planTrip = function(line1, station1, line2, station2) {
 
@@ -43,46 +20,48 @@ const planTrip = function(line1, station1, line2, station2) {
   // index of end of trip
   let stop = trainLines[line2].indexOf(station2);
 
+  let stations1 = trainLines[line1];
+  let stations2 = trainLines[line2];
+
   //first trip
-  let numberOfStopsFirst = 1;
+  let numberOfStopsFirst = 0;
+  let stopNames1 = " ";
   if (start < unionSquareFirst) { // look into this section
-    for (var i = 1; i <= unionSquareFirst; i++) {
-      numberOfStopsFirst = i += numberOfStopsFirst;
-      console.log(numberOfStopsFirst);
+    for (var i = start+1; i <= unionSquareFirst; i++) {
+      numberOfStopsFirst++;
+      stopNames1 += stations1[i] + ", ";
     }
   } else {
-    for (var i = start; i >= unionSquareFirst; i--) {
-      numberOfStopsFirst = i -= numberOfStopsFirst;
-      console.log(numberOfStopsFirst);
+    for (var i = start-1; i >= unionSquareFirst; i--) {
+      numberOfStopsFirst++;
+      stopNames1 += stations1[i] + ", ";
     }
   }
-  console.log(numberOfStopsFirst);
 
   //second trip
-  let numberOfStopsSecond = 1;
-  if (unionSquareSecond < stop) {
-    for (var i = stop; i <= unionSquareSecond; i++) {
-      numberOfStopsSecond = i += numberOfStopsSecond;
+  let numberOfStopsSecond = 0;
+  let stopNames2 = " ";
+  if (unionSquareSecond > stop) {
+    for (var i = stop; i < unionSquareSecond; i++) {
+      numberOfStopsSecond++;
+      stopNames2 = stopNames2 += stations2[i] + ", ";
     }
   } else {
-    for (var i = stop-1; i >= unionSquareSecond; i--) {
-      numberOfStopsSecond = i -= numberOfStopsSecond;
+    for (var i = stop; i > unionSquareSecond; i--) {
+      numberOfStopsSecond++;
+      stopNames2 = stopNames2 += stations2[i] + ", ";
     }
   }
-  console.log(numberOfStopsSecond);
 
-  // let firstTripLength = ;
-  let stops = numberOfStopsFirst + numberOfStopsSecond + 1;
-  let tripFirstHalf = trainLines[line1].slice(start, unionSquareFirst+1);
-  let tripSecondHalf = trainLines[line2].slice(unionSquareSecond, stop+1); //this needs to reverse
-  console.log(start);
-  console.log(unionSquareFirst);
-  console.log(unionSquareSecond);
-  console.log(stop);
-  console.log(`You must travel through the following stops on the ${line1} line: ${tripFirstHalf}`);
-  console.log(`Your journey continues through the following stops: ${tripSecondHalf}`);
-  console.log(`You have ${stops} in total`);
+  let stops = numberOfStopsFirst + numberOfStopsSecond;
+
+  console.log(`You must travel through the following stops on the ${line1} line: ${stopNames1}`);
+  if (numberOfStopsSecond > 0) {
+    console.log(`Your journey continues through the following stops on the ${line2} line: ${stopNames2}`);
+  }
+  console.log(`You have ${stops} stops in total`);
 };
 
-//planTrip('N', 'Times Square', 'N', 'Union Square');
+planTrip('N', 'Times Square', 'N', 'Union Square');
 planTrip('N', 'Times Square', '6', '33rd');
+planTrip('6', '33rd', 'N', '8th');
