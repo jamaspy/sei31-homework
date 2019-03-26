@@ -62,5 +62,6 @@ const planTrip = function( lineA, start, lineB, stop ) {
 //planTrip('sixLine', 'Grand Central', 'lLine', 'Union Square')
 //planTrip('nLine','8th(n)','nLine','8th(n)')
 //planTrip('sixLine', 'Union Square', 'nLine', '8th(n)')
-//planTrip('nLine', '23rd(n)', 'nLine', '8th(n)')
+//planTrip('nLine', '23rd', 'nLine', '8th')
 
+// add error for input of somewhere that doesnt exist
