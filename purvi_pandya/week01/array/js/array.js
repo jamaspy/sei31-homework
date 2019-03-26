@@ -1,6 +1,6 @@
-// Define a function maxOfTwoNumbers that takes two numbers as arguments and returns
-// the largest of them. Use the if-then-else construct available in Javascript.
-// You'll have to remember your pre-work, or do some googling to figure this out.
+/*Define a function maxOfTwoNumbers that takes two numbers as arguments and returns
+the largest of them. Use the if-then-else construct available in Javascript.
+You'll have to remember your pre-work, or do some googling to figure this out.*/
 
 const maxOfTwoNumbers = function(num1, num2){
 
@@ -13,8 +13,8 @@ const maxOfTwoNumbers = function(num1, num2){
 console.log(`The greater number is ${maxOfTwoNumbers(7,21)}.`);
 console.log(`The greater number is ${maxOfTwoNumbers(49,2)}.`);
 
-// Define a function maxOfThree that takes three numbers as arguments and
-// returns the largest of them.
+/*Define a function maxOfThree that takes three numbers as arguments and
+returns the largest of them.*/
 
 const maxOfThree = function (num1,num2,num3){
 if(num1 > num2 && num1 > num3){
@@ -30,10 +30,10 @@ return num1;
 console.log(`The greates num is ${maxOfThree(6,45,12)}`);
 console.log(`The greates num is ${maxOfThree(99,165,2)}`);
 
-// Write a function that takes a character (i.e. a string of length 1) and
-// returns true if it is a vowel, false otherwise.
+/*Write a function that takes a character (i.e. a string of length 1) and
+returns true if it is a vowel, false otherwise.*/
 const stringCharacter = function(char){
-  if (char==="a" || char==="e" || char==="o" || char==="i" || char==="u"){
+  if (char==="a" || char==="e" || char==="o" || char==="i" || char==="u" char==="A" || char==="E" || char==="O" || char==="I" || char==="U"){
   return true;
 }else {
   return false;

@@ -2,11 +2,9 @@
 an amount, and return ' dollars',
 except it will add '(pinky)' at the end if the amount is 1 million. For example:*/
 
-
-
 const drEvil = function (amount){
 
-  if (amount===1000000){
+  if ( amount === 1000000 ){
    const dollar = "1000000 dollars (pinky)";
     return dollar;
   } else {
@@ -15,7 +13,7 @@ const drEvil = function (amount){
   }
 
 }
-console.log(drEvil(1000000));
+console.log( drEvil( 1000000 ) );
 
 /*Create a function called mixUp. It should take in two strings,
 and return the concatenation of the two strings (separated by a space)
@@ -23,17 +21,17 @@ and return the concatenation of the two strings (separated by a space)
 slicing out and swapping the first 2 characters of each.*/
 
 
-const mixUp = function (str1, str2){
+const mixUp = function ( str1, str2 ){
 
   const string1 = str1.slice(0,2) + str2.slice(2) + " ";
   const string2 = str2.slice(0,2) + str1.slice(2);
 
-  console.log(string1);
-  console.log(string2);
-  return string1.concat(string2);
+  console.log( string1) ;
+  console.log( string2 );
+  return string1.concat( string2 );
 
 }
-console.log(mixUp("dinner","cat"));
+console.log(mixUp( "dinner","cat" ));
 
 /*Create a function called fixStart. It should take a single argument,
 a string, and return a version where all occurences of its first character
@@ -41,41 +39,21 @@ a string, and return a version where all occurences of its first character
  You can assume that the string is at least one character long.*/
 
 
-// const fixStart = function(str){
-//   const char = str.slice(0,1);
-//   console.log(str.replace(new RegExp('str.slice(0,1)', 'gi'), '*'))
-//
-//   const string = str.slice(0,1) + str.replace(/'str.slice(0,1)'/gi, "*");
-//
-//   return string;
-// }
-// console.log(fixStart("daddy"));
+const fixStart = function(str){
+  first = str[0];
+  let arr= str.split('');
+  for( var i=1; i<arr.length;i++ ){
 
-const fixStart =function(str){
-  for(var i=1; i<str.length;i++){
-  if(str.charAt(0)===str.charAt(i)){
-    str[i]= '*';
+  if( arr.[i] === firstLetter ){
+    arr[i]= '*';
+
     }
-    console.log(str);
-    return str;
+    console.log(arr);
+    return arr.join('');
 }
 
 }
-fixStart("daddy");
-
-
-
-
-
-// drEvil(10);
-// drEvil(100000);
-//
-// const firstStart = function ("string"){
-//   const string = "babble";
-//   const replaceText = string.replace(/bb/i, "**");
-//   console.log(replaceText);
-//
-// }
+console.log(fixStart("daddy"));
 
 /*Create a function called verbing. It should take a single argument,
 a string. If its length is at least 3, it should add 'ing' to its end
@@ -96,9 +74,9 @@ const verbing = function(str){
 }
 console.log(verbing("coming"));
 
-Create a function called notBad that takes a single argument, a string.
+/*Create a function called notBad that takes a single argument, a string.
 
-/*It should find the first appearance of the substring 'not' and 'bad'.
+It should find the first appearance of the substring 'not' and 'bad'.
 If the 'bad' follows the 'not', then it should replace the whole
 'not'...'bad' substring with 'good' and return the result.
 If it doesn't find 'not' and 'bad' in the right sequence
