@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+* {
+	border: 1px solid green;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	/* background-color: black; */
+	background-size: 20px;
+	background-repeat: round;
+	background-image: url('images/asfalt-light.png');
+}
+
+
+/* fadeIn */
+/*  ------------------------------------------------------------------------- */
+
+header {
+	position: fixed;
+}
+
+header div span {
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* fadeOut */
+/*  ------------------------------------------------------------------------- */
+
+.fadeOut {
+	height: 100vh;
+	width: 100vw;
+}
+
+.left {
+	background-color: black;
+	width: 49.5vw;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.right {
+	background-color: white;
+	width: 49.5vw;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.left span {
+	font-family: 'Roboto Mono', monospace;
+	color: white;
+	position: absolute;
+	top: 45%;
+	left: 38%;
+	font-size: 3em;
+}
+
+.arrow-right {
+	width: 0;
+	height: 0;
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid green;
+	position: absolute;
+	top: 42.5%;
+	left: 100%;
+}
