@@ -1,0 +1,111 @@
+
+/* Just realized that using grid for all eliments is the most stupid idea 
+in the whol world.
+Grid is to be used for layout only. 
+And, to manage the contents inside of each block, let's use flex.  */
+
+*{
+  border: 1px solid green;
+  margin: 0;
+  
+}
+
+
+.container {
+  /* position: relative; */
+  display: grid;
+  margin: auto;
+  grid-template-columns: 10% 1fr 1fr; 
+  /* timeV, description, description */
+  grid-template-rows: 2em 2em 2em 10em 10em 10em 10em 10em 10em;
+  /* nav, timeH, timeH, timeH, timeH */
+  max-width: 960px; 
+  
+  background-color: #ccc;
+  padding: 1em; /* use em rather than px. unit of character */
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+header{
+  display:grid;
+  grid-column: 1/4;
+  grid-row: 1/4;
+
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none; 
+ 
+}
+a{
+  text-decoration: none; 
+  /* why if I do dext-decoration in nav, it does not apply here? */
+}
+
+.timeline{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+}
+
+.timeline-v{  
+  display: grid;
+
+  
+  grid-column: 1/2;
+  grid-row: 4/10;
+  list-style: none;
+  text-align: center;
+  line-height: 100%;
+}
+
+
+.timeline-s{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* why this justify, algin not work? */
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* and works here? why? */
+  }
+
+  .description{
+    margin:0;
+    padding: 0;
+    display: grid;
+    grid-column: 2/4;
+    grid-row: 4/10;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10em 10em 10em 10em 10em 10em
+    /* I have to manually set 10em, 10em for each rows
+    otherwise, children elements cannot get the correct values. 
+    Automatic arrangement from grid is not correct! 
+    */
+
+    /* And, after overal layout, all "em" to be replace by "%" */
+  }
+
+  .description>div{
+    margin:0;
+    padding: 0;
+    display:grid;
+    grid-row: 10em;
+    /* grid-column:1/2; */
+    background-color: grey;
+  }
