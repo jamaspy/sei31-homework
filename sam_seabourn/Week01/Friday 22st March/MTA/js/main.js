@@ -7,10 +7,10 @@ console.log('Up and running');
   \/\_____\  \ \_\ \_\  \ \_\ \ \_\     \/\_____\  \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\  \ \_____\  \ \_\ \_\  \ \_\\"\_\
    \/_____/   \/_/\/_/   \/_/  \/_/      \/_____/   \/_____/   \/_/\/_/   \/_____/   \/_____/   \/_____/   \/_/ /_/   \/_/ \/*/
 
-/////// Line Arrays
-const lineN = ["8th Ave", "Union Square", "23rd Ave", "28th Ave", "34th Ave", "Times Square"]
-const line6 = ["Aster Place", "Union Square", "23rd Ave", "28th Ave", "33rd Ave", "Grand Central"]
-const lineL = ["1st Ave", "3rd Ave", "Union Square", "6th Ave", "8th Ave"]
+
+//const lineN = ["8th Ave", "Union Square", "23rd Ave", "28th Ave", "34th Ave", "Times Square"]
+//const line6 = ["Aster Place", "Union Square", "23rd Ave", "28th Ave", "33rd Ave", "Grand Central"]
+//const lineL = ["1st Ave", "3rd Ave", "Union Square", "6th Ave", "8th Ave"]
 
 
 ////// Diference bewtween Stops
@@ -33,11 +33,8 @@ const lineIndexFind = function(stopName, line) {
 const arrayReverser = function(line) {
   const reversedLine = line.reverse()
   return reversedLine
-
-
-
-
 }
+
 
 /////This Function lists the stops in between
 const stopsList = function(startLoc, startLine, endLoc) {
@@ -96,7 +93,7 @@ const planTripDifferentLine  =function(startLoc, startLine, endLoc, endLine){
 //var startUnionIndex = lineIndexFind("Union Square", startLine)
 //var endUnionIndex = lineIndexFind("Union Square", startLine)
 //var endIndex = lineIndexFind(startLoc, startLine);
-var firstTrip = planTripSameLine(startLoc,startLine,"Union Square")
+//var firstTrip = planTripSameLine(startLoc,startLine,"Union Square")
 //console.log(startIndex + " start Index 1st line")
 //console.log(startUnionIndex + " start Union Index 1st line")
 //console.log(endUnionIndex + " start Union Index 2nd line")
@@ -123,3 +120,27 @@ const planTrip = function(startLoc, startLine, endLoc, endLine) {
     planTripDifferentLine(startLoc, startLine, endLoc, endLine) ;
   }
 }
+/*
+
+const mta = { lineN : ["8th Ave", "UnionSquare", "23rd Ave", "28th Ave", "34th Ave", "Times Square"],
+line6 : ["Aster Place", "UnionSquare", "23rd Ave", "28th Ave", "33rd Ave", "Grand Central"],
+lineL : ["1st Ave", "3rd Ave", "UnionSquare", "6th Ave", "8th Ave"]
+}
+
+
+//Two lines//
+//If two lines
+
+
+const tripDifferentLines = function(){}
+
+
+
+//Chop out stops section for each line
+//If start index is higher that end index
+//Reverse strings
+
+//Get new string indexes
+//Create lists
+
+*/
