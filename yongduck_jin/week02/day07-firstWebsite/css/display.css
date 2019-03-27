@@ -3,11 +3,18 @@
 in the whol world.
 Grid is to be used for layout only. 
 And, to manage the contents inside of each block, let's use flex.  */
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Kalam|Ropa+Sans');
 
 *{
   border: 1px solid rgb(196, 196, 196);
   margin: 0;
   box-sizing: border-box;
+  border: none;
+  border-radius: 1em;
+  font-family: 'Gloria Hallelujah', cursive;
+  /* font-family: 'Kalam', cursive;
+  font-family: 'Ropa Sans', sans-serif; */
+
 }
 
 
@@ -21,16 +28,20 @@ And, to manage the contents inside of each block, let's use flex.  */
   /* nav, timeH, timeH, timeH, timeH */
   max-width: 960px; 
   
-  background-color: rgb(255, 250, 250);
+  background-color: #a7dac3;
   padding: 1em; /* use em rather than px. unit of character */
   border-bottom-right-radius: 1em;
   border-bottom-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
 }
 
 header{
   display:grid;
   grid-column: 1/4;
   grid-row: 1/4;
+  background-color: #deeaee;
+
 
 }
 nav {
@@ -39,17 +50,36 @@ nav {
   align-items: center;
   flex-direction: row;
   text-decoration: none; 
+  background-color: #ffeead;
+  border-radius: 0%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  
+  border-bottom: #ffcc5c 0.1em solid;
  
 }
 a{
+  margin-right: 3em;
+  color: black;
   text-decoration: none; 
   /* why if I do dext-decoration in nav, it does not apply here? */
 }
 
-.timeline{
+.timeline, .timeline li{
   display: flex;
   justify-content: space-around;
   list-style: none;
+  background-color: #b1cbbb; 
+  
+
+}
+.timeline{
+  border-bottom: solid 0.1em #90b89fdb; 
+  border-radius: 0%;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  
+
 
 }
 
@@ -61,6 +91,11 @@ a{
   grid-row: 4/10;
   list-style: none;
   text-align: center;
+  background-color: #eea29a;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em; 
+  font-size: 1.5em;
+  
   /* line-height: 100%; */
 }
 
@@ -70,6 +105,11 @@ a{
   justify-content: center;
   align-items: center;
   height: 30px;
+  background-color: #c94c4c;
+  /* how to write vertical txt? */
+
+
+  
   /* why this justify, algin not work? */
 }
 
@@ -94,6 +134,7 @@ li{
 
     grid-template-columns: 50% 50%;
     grid-template-rows: 30em 30em 30em 30em 30em 30em; 
+    border: none;
     /* I have to manually set 10em, 10em for each rows
     otherwise, children elements cannot get the correct values. 
     Automatic arrangement from grid is not correct! 
@@ -101,16 +142,19 @@ li{
 
     /* And, after overal layout, all "em" to be replace by "%" */
   }
-
+  div{
+    border:none;
+  }
   .description>div{
     margin:0;
     padding: 0;
     display:grid;
     grid-row: 10em;
     /* grid-column:1/2; */
-    background-color: white;
+    background-color: #a7dac3;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 30em 30em 30em 30em 30em 30em; 
+    /* border: none; */
   }
 
 
@@ -122,15 +166,22 @@ li{
     
     background-repeat: no-repeat;
   background-origin: content-box;
+  border-radius: 3em;
+  border: white solid 0.1em;
+  background-color: #ffcc5c;
   
   
 }
 
 .image2 {background-image: url('../img/osaka1.jpeg');
  background-size: 45em auto;
+ border-top-right-radius: 0.5em;
+
+ 
 }
-  .image3 {background-image: url('../img/trs80pc1\ PC1211.jpg');
-  }
+   #a {background-image: url('../img/trs80pc1\ PC1211.jpg');
+    background-color: white;
+  } 
   .image6 {background-image: url('../img/Sun-3_80_workstation.jpg'); 
     background-position: 48% 14%;
     background-size: 38em auto;}
@@ -140,9 +191,10 @@ li{
   .image10 {background-image: url('../img/Award\ for\ the\ free\ software.jpg');
     background-size: 30em auto;
     background-position: 32% 3%}
-  .image11 {background-image: url('../img/mruby.png');
+  .image11, #b{background-image: url('../img/mruby.png');
     background-position: 71% 42%;
-        background-size: 100% auto;} 
+        background-size: 100% auto;
+      background-color: white;} 
   
   
   
