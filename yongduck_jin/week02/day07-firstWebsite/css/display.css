@@ -5,9 +5,9 @@ Grid is to be used for layout only.
 And, to manage the contents inside of each block, let's use flex.  */
 
 *{
-  border: 1px solid green;
+  border: 1px solid rgb(196, 196, 196);
   margin: 0;
-  
+  box-sizing: border-box;
 }
 
 
@@ -17,11 +17,11 @@ And, to manage the contents inside of each block, let's use flex.  */
   margin: auto;
   grid-template-columns: 10% 1fr 1fr; 
   /* timeV, description, description */
-  grid-template-rows: 2em 2em 2em 10em 10em 10em 10em 10em 10em;
+  grid-template-rows: 2em 2em 2em auto auto auto auto auto auto;
   /* nav, timeH, timeH, timeH, timeH */
   max-width: 960px; 
   
-  background-color: #ccc;
+  background-color: rgb(255, 250, 250);
   padding: 1em; /* use em rather than px. unit of character */
   border-bottom-right-radius: 1em;
   border-bottom-left-radius: 1em;
@@ -61,7 +61,7 @@ a{
   grid-row: 4/10;
   list-style: none;
   text-align: center;
-  line-height: 100%;
+  /* line-height: 100%; */
 }
 
 
@@ -69,6 +69,7 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30px;
   /* why this justify, algin not work? */
 }
 
@@ -92,7 +93,7 @@ li{
     grid-row: 4/10;
 
     grid-template-columns: 50% 50%;
-    grid-template-rows: 10em 10em 10em 10em 10em 10em
+    grid-template-rows: 30em 30em 30em 30em 30em 30em; 
     /* I have to manually set 10em, 10em for each rows
     otherwise, children elements cannot get the correct values. 
     Automatic arrangement from grid is not correct! 
@@ -107,5 +108,43 @@ li{
     display:grid;
     grid-row: 10em;
     /* grid-column:1/2; */
-    background-color: grey;
+    background-color: white;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30em 30em 30em 30em 30em 30em; 
   }
+
+
+  
+  .image2, .image3, .image6, .image7, .image10, .image11 {
+    background-size: auto auto; 
+    background-position: center; 
+    
+    
+    background-repeat: no-repeat;
+  background-origin: content-box;
+  
+  
+}
+
+.image2 {background-image: url('../img/osaka1.jpeg');
+ background-size: 45em auto;
+}
+  .image3 {background-image: url('../img/trs80pc1\ PC1211.jpg');
+  }
+  .image6 {background-image: url('../img/Sun-3_80_workstation.jpg'); 
+    background-position: 48% 14%;
+    background-size: 38em auto;}
+  .image7 {background-image: url('../img/ruby.jpg');
+    background-position: 48% 14%;
+    background-size: 45em auto;}
+  .image10 {background-image: url('../img/Award\ for\ the\ free\ software.jpg');
+    background-size: 30em auto;
+    background-position: 32% 3%}
+  .image11 {background-image: url('../img/mruby.png');
+    background-position: 71% 42%;
+        background-size: 100% auto;} 
+  
+  
+  
+
+ 
