@@ -90,7 +90,7 @@ console.log(withdraw(bankOfBen, 'Alex Random', 599))
 
 // The bank is now closing and wants to know how much money they have, so runs a sum check
 
-console.log(sumOfBankDeposits(bankOfBen));
+console.log(sumOfBankDeposits(bankOfBe+n));
 
 
 
