@@ -9,12 +9,12 @@
 // The sum of all the digits must be greater than 16
 
 const validateCreditCard = function(cC){
-    if  ((cC.toString().length === 16) &&
-        // !isNaN(parseFloat(cC)) && isFinite(cC) &&
+    if ((cC.toString().length === 16) &&
         (cC.toString().charAt(0)*16 !== cC) &&
         (typeof cC === 'number') &&
         (cC% 2 === 0) &&
-        (cC.toString().split('').reduce((a, b) => a + b) > 16)) {
+        (cC.toString().split('').reduce((a, b) => a + b) > 16)
+			 ){
     console.log(true);
   } else {
     console.log(false);
