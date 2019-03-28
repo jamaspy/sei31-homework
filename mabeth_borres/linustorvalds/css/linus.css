@@ -46,7 +46,7 @@ body {
 }
 
 .bodyfaces {
-	background-color: #293c52; 
+	background-color: #293c52;
 	width: 960px;
 	margin: auto; /*centers our container on the page */
 	padding: 1em;
@@ -139,7 +139,7 @@ a {
 	transition: 2s;
 }
 
-.linuxevents {	
+.linuxevents {
 	width: 960px;
 	height: 600px;
 	background: url("../img/rsz_linux_events30.jpg") no-repeat;
@@ -312,7 +312,7 @@ a {
  font-weight: bold;
  opacity: 0;
  visibility: visible;
- /*-webkit-transition: visibility 0s, opacity 0.5s linear; 
+ /*-webkit-transition: visibility 0s, opacity 0.5s linear;
  transition: visibility 0s, opacity 0.5s linear;*/
 }
 
@@ -325,7 +325,7 @@ a {
  width: 150px;
  padding: 8px 15px;
  visibility: visible;
- opacity: 1; 
+ opacity: 1;
  border-radius: 0.5em;
 }
 
@@ -336,3 +336,44 @@ a {
  color: #cc0605;
  text-decoration: none;
 }
+
+
+/* @group Blink */
+.blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+/* @end */
