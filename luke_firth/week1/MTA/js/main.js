@@ -19,7 +19,7 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
   //console.log(subway[startline]);   //testing to see if start variable is stored from user's subway line input
   //console.log(subway[endLine]);     //testing to see if endline variable is stored from user's subway endLine input
 
-  if (startline === endLine) {                  //Ok 1st step. If we are chillen on the the same line we can just calculate the distance between
+  if (startline === endLine) {                  //if start line = end line we can just calculate the distance between
     for (let i = 0; i < start.length; i++) {    //the startStop and the endStop without getting fancy and changing lines!!!
       if (start[i] === startStop) {             //if startLine is == to endLine!!! bingo we dont have to change lines :) happy days!
         startIndex = i;
@@ -30,10 +30,10 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
         endIndex = i;
         //console.log(endIndex);//test          //happy days store that index in endIndex #Winning.
       }
-      result = Math.abs(startIndex - endIndex); //now hopefully we can store the difference between the 2 stored indexes using Math.abs
-      console.log(`This trip has ${result} stops`); //#MathDoesNotGiveYouAbs
-      return result;                            //This beautiful function "Math.abs" takes 2 perameters
-    }                                           //stores the difference in "result" and then outputs to the console using a classic console.log
+      result = Math.abs(startIndex - endIndex);     //now hopefully we can store the difference between the 2 stored indexes using Math.abs
+      console.log(`This trip has ${result} stops`);
+      return result;                                //function "Math.abs" takes 2 perameters
+    }                                               //stores the difference in "result" and then outputs to the console using a classic console.log
   } else {
     for (let i = 0; i < start.length; i++) {
       if (start[i] === startStop) {             //Here is another for loop to grab the first stop and store its index in startIndex
@@ -67,7 +67,7 @@ howManyStops('redLine', 'Times Square', 'blueLine', 'Grand Central');   //multi 
 howManyStops('blueLine', 'Astor Place', 'blueLine', 'Central Station');  //broken
 
 
-//Lines for reference   
+//Lines for reference
 
 //redLine: ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
 //greenLine: ["8th", "6th", "Union Square", "3rd", "1st"],
