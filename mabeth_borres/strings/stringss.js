@@ -1,5 +1,8 @@
 // Homework By Mabeth Borres of SEI-31
 
+// ALL MY HOMEWORK can be accessed running at:
+// https://mmborres.github.io/homework/strings.html
+
 /*Create a function called DrEvil. It should take a single argument, an amount,
 and return '<amount> dollars',
 except it will add '(pinky)' at the end if the amount is 1 million.
@@ -158,7 +161,7 @@ const verbing = function (str) {
       //console.log ("5 " + str);
       //add ing
       //rules
-      
+
       /*Rule 1: For words that end in a silent (not pronounced) -e, drop the -e and add -ing.
       Example: smile → smiling*/
 
@@ -267,38 +270,56 @@ notBad('This dinner is bad!');
 notBad('I am not a hater of breaking bad.');
 
 
-////// Handle from Web percentage
+////// Handle from Web Page
 
 const ans = "<b>ANSWER >> </b>";
 let printMsg = "";
 
 const handleNotBad = function() {
-  const str = document.getElementById("notBadValue").value;
-  printMsg = notBad(str);
-  document.getElementById("notBad").innerHTML = ans + printMsg;
+	const str = document.getElementById("notBadValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	}
+	printMsg = notBad(str);
+	document.getElementById("notBad").innerHTML = ans + printMsg;
 };
 
 const handleDrEvil = function() {
-  const str = document.getElementById("DrEvilValue").value;
-  printMsg = DrEvil(str);
-  document.getElementById("DrEvil").innerHTML = ans + printMsg;
+	const str = document.getElementById("DrEvilValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	} else if (Number.isInteger(parseInt(str))===false) {
+		document.getElementById("DrEvil").innerHTML = "";
+		return;
+	}
+	printMsg = DrEvil(str);
+	document.getElementById("DrEvil").innerHTML = ans + printMsg;
 };
 
 const handleMixUp = function() {
-  const str1 = document.getElementById("mixUpValue1").value;
-  const str2 = document.getElementById("mixUpValue2").value;
-  printMsg = mixUp(str1, str2);
-  document.getElementById("mixUp").innerHTML = ans + printMsg;
+	const str1 = document.getElementById("mixUpValue1").value;
+	const str2 = document.getElementById("mixUpValue2").value;
+	if (str1==="" || str2==="") {
+		return; //cannot be empty
+	}
+	printMsg = mixUp(str1, str2);
+	document.getElementById("mixUp").innerHTML = ans + printMsg;
 };
 
 const handleFixStart = function() {
-  const str = document.getElementById("fixStartValue").value;
-  printMsg = fixStart(str);
-  document.getElementById("fixStart").innerHTML = ans + printMsg;
+	const str = document.getElementById("fixStartValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	}
+	printMsg = fixStart(str);
+	document.getElementById("fixStart").innerHTML = ans + printMsg;
 };
 
 const handleVerbing = function() {
-  const str = document.getElementById("verbingValue").value;
-  printMsg = verbing(str);
-  document.getElementById("verbing").innerHTML = ans + printMsg;
+	const str = document.getElementById("verbingValue").value;
+	if (str==="") {
+		return; //cannot be empty
+	}
+	printMsg = verbing(str);
+	document.getElementById("verbing").innerHTML = ans + printMsg;
 };
