@@ -1,8 +1,10 @@
 
 
+//dollar sign to be managed later. 
+// 1. Make an object ot save the balance. You have keep the track of record 
 let bankRecord = {
-  checking:50,
-  savings:100
+  checking:0,
+  savings:0
 }
 $(document).on('ready', function(){
 
@@ -15,55 +17,63 @@ $(document).on('ready', function(){
 // //lets use the same function as above. 
 
 
-// 1. Make an object ot save the balance. You have keep the track of record 
-//object out of function. Function would update this. 
+
 //user infor, and money, withdrawal or depoists to be recorded. 
 
+//object out of function. Function would update this. 
 
-//dollar sign to be managed later. 
+
+let $checkingBalance = $('#checking-balance') //done
+let $savingsBalance = $('#savings-balance') //done
+
+$checkingBalance.html(bankRecord.checking) //these two lines can be pushed down later, so that I can use for h1 update. 
+$savingsBalance.html(bankRecord.savings)
 
 
-//link with webpage. 
-let $checking = $('#checking-balance') //done
-let $savings = $('#savings-balance') //done
 
-$checking.html(bankRecord.checking)
+// function compar(value, id){
+// if(value == 'Deposit'){
 
-$savings.html(bankRecord.savings)
-
-// let that; 
-// const inOut = function(num){
-//   console.log($('#checking-amount').val()); 
-//   console.log('$depositButton.value', $depositButton.value);
-  
-//    bankRecord.checking = that.value == 'Deposit' ? bankRecord.checking +numb.val() : bankRecord.checking -num.val(); 
-   
+// }
 // }
 
-let $moneyInOut = $('#checking-balance').html() // to be displayed. 
 
-// console.log($checkingAmount);
+// console.log('this is buttons', buttons);
 
-$checkingAmount =$('#checking-amount')
-console.log($checkingAmount);
-// console.log('checking amount val()', $checkingAmount.val());
+let $inOutCheckingAccount =$('#checking-amount') //number to put
+// let $inOutBalanceAccount =$('#checking-amount')
+// let $depositButton = $('#checking-deposit'); // deposit button
 
-let $depositButton = $('#checking-deposit'); // deposit button
-$depositButton.on('click', (event) => {
-  console.log('this is event.this: ', event.target.value);
-  // console.log(`this is this:`, this.currentTarget.val());
-  let buttonClicked = event.target.value //why this no
-
-  console.log('this is event.this'. event);
-  console.log('function fired. checking amount val():', $checkingAmount.val())
-  console.log('this is :', this);
-
-  console.log('$depositButton.value', $depositButton.val());
-  
-bankRecord.checking = buttonClicked == 'Deposit' ? bankRecord.checking +Number($checkingAmount.val()) : bankRecord.checking -Number($checkingAmount.val()); 
-
-
+let $bubbleTest = $('body')
+console.log('buble', $bubbleTest);
+$bubbleTest.on('click', (e)=>{
+  console.log(e.target.value, e.target.id); //target.value is working, but currentTarget not working. 
 })
+
+let buttons = $('input[type=button]') // so I don't need this. just attach event listener to body. 
+
+// buttons.on('click', (event)=>{
+//   console.log('this is event', event.target.value, event.target.id);
+  
+//   bankRecord.checking = event.target.value == 'Deposit' ? bankRecord.checking 
+//   +Number($inOutCheckingAccount.val()) : bankRecord.checking -Number($inOutCheckingAccount.val()); 
+
+  // bankRecord.savings = event.target.value == 'Deposit' ? bankRecord.checking 
+  // +Number($checkingAmount.val()) : bankRecord.checking -Number($checkingAmount.val());
+// })
+
+
+// $depositButton.on('click', (event) => {
+
+//   //만약 내가 event.target.valu 를 활용하면, 이 펑션을 depositButton 밖으로 꺼내서, 공야할 수 있다. 
+//   // 콜백 안에서 event를 상속 받아서 다시 실행하면 된다. 
+//   // console.log('this is event.this: ', event.target.value);
+//   let buttonClicked = event.target.value //why 'this' does not work?   
+//   bankRecord.checking = buttonClicked == 'Deposit' ? bankRecord.checking 
+//   +Number($checkingAmount.val()) : bankRecord.checking -Number($checkingAmount.val()); 
+
+
+// })
   // console.log('this.value', this.value);
   // console.log('clicked');
   // console.log(this.value);
