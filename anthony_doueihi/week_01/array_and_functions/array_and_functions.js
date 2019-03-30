@@ -85,6 +85,6 @@ const findLongestWord = function(thisArray) {
 
 const filterLongWords = function(thisArray, l) {
   return thisArray.filter(function(word) {
-    return word.length >= l;
+    return word.length > l;
   })
 }
