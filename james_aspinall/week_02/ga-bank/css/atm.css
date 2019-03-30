@@ -28,7 +28,8 @@
 .account {
   background-color: #6C9A74;
   border: 1px solid #295A33;
-  padding: 10px;
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .balance {
@@ -37,6 +38,8 @@
   font-family: 'Ruluko', sans-serif;
   font-size: 50px;
   padding: 25px 0;
+
+  margin-bottom: 10px;;
 }
 
 .clear {
@@ -46,4 +49,10 @@
 .zero {
   background-color: #F52F4F;
   color: #FFF;
+}
+
+h1{
+  font-family: arial;
+  font-weight: 100;
+  color: #fff;
 }
