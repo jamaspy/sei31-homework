@@ -11,6 +11,11 @@
   margin: 50px 0px;
 }
 
+h1 {
+  color: white;
+  font-family: arial, sans-serif;
+}
+
 #title {
   color: #F52F4F;
   font-family: 'Oleo Script', cursive;
@@ -26,10 +31,12 @@
 }
 
 .account {
-  background-color: #6C9A74;
+  background-color: red;
   border: 1px solid #295A33;
-  padding: 10px;
+  padding: 15px;
+  border-radius: 5%;
 }
+
 
 .balance {
   background-color: #E3E3E3;

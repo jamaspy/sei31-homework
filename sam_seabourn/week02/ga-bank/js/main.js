@@ -3,7 +3,7 @@
 //| (_ | / _ \ '_ \/ _` | |  \ V / _` | '_| / _` | '_ \ / -_|_-<
 // \___|_\___/_.__/\__,_|_|   \_/\__,_|_| |_\__,_|_.__/_\___/__/
 //
-console.log('Test');
+
 
 const accounts = [{
     accName: "checking",
@@ -16,65 +16,54 @@ const accounts = [{
 ]
 
 
-const zeroChecker = function() {
-  if (accounts[0].value === 0) {
-    $('#checking').css("backgroundColor", "red")
-  } else {
-    $('#checking').css("backgroundColor", "gray")
-  }
-  if (accounts[1].value === 0) {
-    $('#savings').css("backgroundColor", "red")
-  } else {
-    $('#savings').css("backgroundColor", "gray")
-  }
-}
+console.log('Test');
+
+// ___                             _     ___             _
+// |   \ ___  __ _  _ _ __  ___ _ _| |_  | _ \___ __ _ __| |_  _
+// | |) / _ \/ _| || | '  \/ -_) ' \  _| |   / -_) _` / _` | || |
+// |___/\___/\__|\_,_|_|_|_\___|_||_\__| |_|_\___\__,_\__,_|\_, |
+//                                                          |__/
+//$(document).ready(function() {
 
 
-$('#checking-deposit').on('click', function() {
-  const checkingInput = Number($('#checking-amount').val());
-  accounts[0].value = accounts[0].value + checkingInput
-  $('#checking-balance').text("$" + accounts[0].value);
-  $('#checking-amount').val('')
-  zeroChecker();
-});
+ $('.withdraw').hover(function(){$(this).toggleClass('withdraw_hover');
+})
 
-$('#savings-deposit').on('click', function() {
-  const savingsInput = Number($('#savings-amount').val());
-  accounts[1].value = accounts[1].value + savingsInput
-  $('#savings-balance').text("$" + accounts[1].value);
-  $('#savings-amount').val('')
-  zeroChecker();
-});
 
-$('#checking-withdraw').on('click', function() {
-  const checkingInputM = Number($('#checking-amount').val());
-  if (checkingInputM > accounts[0].value) {
-    alert(`You can only have $${accounts[0].value} remaining in your account`)
-  } else {
-    accounts[0].value = accounts[0].value - checkingInputM;
+  $('#checking-deposit').on('click', function() {
+    const checkingInput = Number($('#checking-amount').val());
+    console.log("Boom")
+    accounts[0].value = accounts[0].value + checkingInput
     $('#checking-balance').text("$" + accounts[0].value);
     $('#checking-amount').val('')
-    zeroChecker();
-  }
-});
+  });
 
-$('#savings-withdraw').on('click', function() {
-  const savingsInputM = Number($('#savings-amount').val());
-  if (savingsInputM > accounts[1].value) {
-    alert(`You can only have $${accounts[1].value} in your account`)
-  } else {
+  $('#savings-deposit').on('click', function() {
+    const savingsInput = Number($('#savings-amount').val());
+    accounts[1].value = accounts[1].value + savingsInput
+    $('#savings-balance').text("$" + accounts[1].value);
+    $('#savings-amount').val('')
+  });
+
+  $('#checking-withdraw').on('click', function() {
+      const checkingInputM = Number($('#checking-amount').val());
+      accounts[0].value = accounts[0].value - checkingInputM;
+      $('#checking-balance').text("$" + accounts[0].value);
+      $('#checking-amount').val('')
+  });
+
+  $('#savings-withdraw').on('click', function() {
+    const savingsInputM = Number($('#savings-amount').val());
     accounts[1].value = accounts[1].value - savingsInputM;
     $('#savings-balance').text("$" + accounts[1].value);
     $('#savings-amount').val('')
-    zeroChecker();
-  }
-});
+  });
 
 
 
 
 
-
+//});
 
 // ###Type:
 // - Lab
@@ -90,12 +79,12 @@ $('#savings-withdraw').on('click', function() {
 // ###Specification:
 // ******Keep track of the checking and savings balances somewhere
 // ****** Add functionality so that a user can deposit money into one of the bank accounts.
-// ****** Make sure you are updating the display and manipulating the HTML of the page
+// * Make sure you are updating the display and manipulating the HTML of the page
 // so a user can see the change.
-// ****** Add functionality so that a user can withdraw money from one of the bank accounts.
-// ****** Make sure you are updating the display and manipulating the HTML of the page
+// * Add functionality so that a user can withdraw money from one of the bank accounts.
+// * Make sure you are updating the display and manipulating the HTML of the page
 // so a user can see the change.
-// ***** Make sure the balance in an account can't go negative. If a user tries to
+// * Make sure the balance in an account can't go negative. If a user tries to
 // withdraw more money than exists in the account, ignore the transaction.
 // * When the balance of the bank account is $0 the background of that bank account
 // should be red. It should be gray when there is money in the account.
