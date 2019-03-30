@@ -22,12 +22,6 @@ $( document ).ready( function() {
 		return Number( accountBalance.html().slice( 1 ) );
 	};
 
-	//DEPRECATED
-	// const getUserInput = function( accountInput ) {
-	// 	// assign the value from chosen account and convert to number
-	// 	return Number( accountInput.val() );
-	// };
-
 	const checkingInput = function() {
 		return Number( $checkingInput.val() );
 	};
@@ -35,6 +29,12 @@ $( document ).ready( function() {
 	const savingsInput = function() {
 		return Number( $savingsInput.val() );
 	};
+
+	// DEPRECATED in favour of easier to read functions below
+	// const getUserInput = function( accountInput ) {
+	// 	// assign the value from chosen account and convert to number
+	// 	return Number( accountInput.val() );
+	// };
 
 	const totalDollars = function( a = checkingTotal, b = savingsTotal ) {
 		return a + b;
@@ -66,10 +66,10 @@ $( document ).ready( function() {
 		if ( totalDollars() < checkingInput() ) {
 			console.log( 'Sorry, not enough funds to make that withdrawl.' );
 
-		} // if you don't have enough in checkingTotal but you do have enough across both accounts
+		} // if there is not enough in checkingTotal but there is enough across both accounts
 		else if ( checkingTotal < checkingInput() && totalDollars() >= checkingInput() ) {
 
-			// if you have enough, but the current account has 0, it must come from the opposite account
+			// if there is sufficient overdraft funds, but the current account has $0, it must come from the opposite account
 			if ( checkingTotal === 0 || checkingInput() === savingsTotal ) {
 				// update global savingsTotal
 				savingsTotal -= checkingInput();
@@ -130,10 +130,10 @@ $( document ).ready( function() {
 		if ( totalDollars() < savingsInput() ) {
 			console.log( 'Sorry, not enough funds to make that withdrawl.' );
 
-		} // if you don't have enough in savingsTotal but you do have enough across both accounts
+		} // if there is not enough in savingsTotal but there is enough across both accounts
 		else if ( savingsTotal < savingsInput() && totalDollars() >= savingsInput() ) {
 
-			// if you have enough, but the current account has 0, it must come from the opposite account
+			// if there is sufficient overdraft funds, but the current account has $0, it must come from the opposite account
 			if ( savingsTotal === 0 || savingsInput() === checkingTotal ) {
 				// update global checkingTotal
 				checkingTotal -= savingsInput();
