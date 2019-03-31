@@ -1,7 +1,8 @@
-//  ___ _     _          _  __   __        _      _    _
-// / __| |___| |__  __ _| | \ \ / /_ _ _ _(_)__ _| |__| |___ ___
-//| (_ | / _ \ '_ \/ _` | |  \ V / _` | '_| / _` | '_ \ / -_|_-<
-// \___|_\___/_.__/\__,_|_|   \_/\__,_|_| |_\__,_|_.__/_\___/__/
+//   _______     __        __  _   __         _      __   __
+//  / ___/ /__  / /  ___ _/ / | | / /__ _____(_)__ _/ /  / /__ ___
+// / (_ / / _ \/ _ \/ _ `/ /  | |/ / _ `/ __/ / _ `/ _ \/ / -_|_-<
+// \___/_/\___/_.__/\_,_/_/   |___/\_,_/_/ /_/\_,_/_.__/_/\__/___/
+//
 //
 console.log('Test');
 
@@ -15,8 +16,15 @@ const accounts = [{
   }
 ]
 
+//const accTotal = accounts[0].value+accounts[1].value
 
-const zeroChecker = function() {
+//    ___              __  _
+//   / _/_ _____  ____/ /_(_)__  ___  ___
+//  / _/ // / _ \/ __/ __/ / _ \/ _ \(_-<
+// /_/ \_,_/_//_/\__/\__/_/\___/_//_/___/
+//
+// This function changes the background colour
+const colorChecker = function() {
   if (accounts[0].value === 0) {
     $('#checking').css("backgroundColor", "red")
   } else {
@@ -30,12 +38,42 @@ const zeroChecker = function() {
 }
 
 
+// Borrow from account function
+const crossAccBorrowChecking = function(){
+  checkingInput = Number($('#checking-amount').val());
+  const combinedBal = accounts[0].value+accounts[1].value
+  if ( checkingInput <= combinedBal) {
+    const remainingBal = combinedBal - checkingInput;
+    $('#checking-balance').text( "$"+0 );
+    $('#savings-balance').text( "$"+ remainingBal)
+    accounts[0].value = 0
+    accounts[1].value = remainingBal
+    colorChecker()
+  } else {
+    alert ("There is not enough money to continue")
+    $('#checking-balance').text( "$"+accounts[0].value );
+    $('#savings-balance').text( "$"+accounts[1].value )
+    colorChecker()
+  }
+}
+  // check if there is enough money across all the other accounts
+  // If there is subtract total from first account first
+  // Then subtract from the reamaining account
+
+
+
+
+//    ____              __    __   _     __
+//   / __/  _____ ___  / /_  / /  (_)__ / /____ ___  ___ _______
+//  / _/| |/ / -_) _ \/ __/ / /__/ (_-</ __/ -_) _ \/ -_) __(_-<
+// /___/|___/\__/_//_/\__/ /____/_/___/\__/\__/_//_/\__/_/ /___/
+
 $('#checking-deposit').on('click', function() {
   const checkingInput = Number($('#checking-amount').val());
   accounts[0].value = accounts[0].value + checkingInput
   $('#checking-balance').text("$" + accounts[0].value);
   $('#checking-amount').val('')
-  zeroChecker();
+  colorChecker();
 });
 
 $('#savings-deposit').on('click', function() {
@@ -43,18 +81,18 @@ $('#savings-deposit').on('click', function() {
   accounts[1].value = accounts[1].value + savingsInput
   $('#savings-balance').text("$" + accounts[1].value);
   $('#savings-amount').val('')
-  zeroChecker();
+  colorChecker();
 });
 
 $('#checking-withdraw').on('click', function() {
   const checkingInputM = Number($('#checking-amount').val());
   if (checkingInputM > accounts[0].value) {
-    alert(`You can only have $${accounts[0].value} remaining in your account`)
+    crossAccBorrowChecking();
   } else {
     accounts[0].value = accounts[0].value - checkingInputM;
     $('#checking-balance').text("$" + accounts[0].value);
     $('#checking-amount').val('')
-    zeroChecker();
+    colorChecker();
   }
 });
 
@@ -66,7 +104,7 @@ $('#savings-withdraw').on('click', function() {
     accounts[1].value = accounts[1].value - savingsInputM;
     $('#savings-balance').text("$" + accounts[1].value);
     $('#savings-amount').val('')
-    zeroChecker();
+    colorChecker();
   }
 });
 
@@ -76,32 +114,6 @@ $('#savings-withdraw').on('click', function() {
 
 
 
-// ###Type:
-// - Lab
-//
-// ###Summary
-// - This lab will help you practice JavaScript functions and manipulating the DOM with jQuery.
-// - You'll be selecting elements, manipulating HTML, and manipulating style along
-// with building out the logic using JavaScript.
-//
-// ###Objectives:
-// - DOM selection, appending, removal, updating
-//
-// ###Specification:
-// ******Keep track of the checking and savings balances somewhere
-// ****** Add functionality so that a user can deposit money into one of the bank accounts.
-// ****** Make sure you are updating the display and manipulating the HTML of the page
-// so a user can see the change.
-// ****** Add functionality so that a user can withdraw money from one of the bank accounts.
-// ****** Make sure you are updating the display and manipulating the HTML of the page
-// so a user can see the change.
-// ***** Make sure the balance in an account can't go negative. If a user tries to
-// withdraw more money than exists in the account, ignore the transaction.
-// * When the balance of the bank account is $0 the background of that bank account
-// should be red. It should be gray when there is money in the account.
-// * What happens when the user wants to withdraw more money from the checking
-// account than is in the account? These accounts have overdraft protection, so if
-// a withdrawal can be covered by the balances in both accounts, take the checking
 // balance down to $0 and take the rest of the withdrawal from the savings account.
 // If the withdrawal amount is more than the combined account balance, ignore it.
 // * Make sure there is overdraft protection going both ways.
