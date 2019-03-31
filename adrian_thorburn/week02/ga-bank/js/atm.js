@@ -1,9 +1,11 @@
-// $(document).ready(function () {
+//console.log('test');
+
+//$(document).ready(function () {
 
 //Keep track of the checking and savings balances somewhere
 const accounts = {
-  checking: 0,
-  savings: 0,
+  checking: 20,
+  savings: 20,
 }
 
 // acount at zero zeroChecker
@@ -24,7 +26,6 @@ const zeroCheckerSav = function () {
   $('#savings').removeClass('zero');
   }
 }
-
 
 ////////// Bank processes //////////
 const chkDeposit = function (value){
@@ -65,8 +66,6 @@ const savWithdraw = function (value){
   zeroCheckerSav();
 }
 
-
-
 //jquery visual updaters
 $('#checking-deposit').on('click', function(event){
   const $depositAmount = parseInt($('#checking-amount').val()); //
@@ -99,3 +98,6 @@ $('#savings-withdraw').on('click', function(event){
   //$('#checking-amount').val('')
 }
 });
+
+
+//}) //end of document ready
