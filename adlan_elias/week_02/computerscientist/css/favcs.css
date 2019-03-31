@@ -83,6 +83,14 @@ h2 {
   height: 40px;
 }
 
+h3 {
+  text-transform: uppercase;
+  text-align: left;
+  color: white;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
 ul {
   font-family: 'Mali', cursive;
   letter-spacing: 1px;
