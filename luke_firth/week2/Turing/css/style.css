@@ -7,6 +7,11 @@ font-family: 'Roboto Condensed', sans-serif;
 /* {
   border: 1px solid lime;
 }*/
+img{
+width: 60%;
+
+}
+
 
 nav {
   display: flex;
@@ -28,13 +33,14 @@ nav a {
   text-align: center;
   font-weight: 700;
   text-decoration: none;
-  padding: 40px 0;
+  padding: 5px 0;
   font-size: 25px;
   text-transform: uppercase;
 }
 
 
 .tilt{
+
 transition: 50s;
 }
 .tiltO{

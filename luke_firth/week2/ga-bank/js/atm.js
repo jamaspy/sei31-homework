@@ -73,6 +73,9 @@ $('#savings-withdraw').click(function(){
 
 //cat animations
 
+
+
+
 const img = document.getElementsByTagName('img')[1];
 img.style.position = 'absolute';
 img.style.top = '-1400px';
@@ -80,7 +83,7 @@ const catsFalling = function() {
   let oldTop = parseInt(img.style.top);
   let newTop = oldTop + 1;
   img.style.top = newTop + 'px';
-  console.log(img.style.top);
+  //console.log(img.style.top);
   if(img.style.top === '780px'){
     img.style.top = '-760px'
   }
@@ -104,24 +107,15 @@ window.setInterval(catsRising, 3);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+const $img = $('img').eq(1);
+$img.css({'position':'absolute'});
+$img.css({'top':'-1400px'});
+$img.animate(function(){
+  let $start = parseInt($img.css('top'));
+  let $increment = $start + 1;
+  $img.css('top') = $increment + 'px';
+});
+window.setInterval($img, 3);
+*/
 });
