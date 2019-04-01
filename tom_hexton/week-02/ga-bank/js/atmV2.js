@@ -42,12 +42,6 @@ $( document ).ready( function() {
 		}
 	};
 
-	// DEPRECATED in favour of easier to read functions above
-	// const getUserInput = function( accountInput ) {
-	// 	// assign the value from chosen account and convert to number
-	// 	return Number( accountInput.val() );
-	// };
-
 	const totalDollars = function( a = checkingTotal, b = savingsTotal ) {
 		return a + b;
 	}
