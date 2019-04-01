@@ -29,9 +29,9 @@
   font-size: 13px;
 }
 
-
+/*
 /* Cat Animation Images */
-
+/*
 #ring{
   height: 15%;
   position: absolute;
@@ -62,7 +62,7 @@
   z-index: 1;
 
 }
-
+*/
 h1{
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
