@@ -1,99 +1,93 @@
 
-
-//dollar sign to be managed later. 
-// 1. Make an object ot save the balance. You have keep the track of record 
 let bankRecord = {
-  checking:0,
-  savings:0
+  checking:4, //in order to avoid "if, else" later
+  savings:5
 }
+
+// $('.zero').removeClass('zero') // last part '.' not required for 'zero'
+// function outside of juqery, to check zero and add every time. 
+
 $(document).on('ready', function(){
-
-
-// 2. Add funciton, a User to deposit. 
-// //function to deposit.  same function, but +, - change. 
-// // if the balance 0, refuse. 
-
-// 3. Function to withdraw money
-// //lets use the same function as above. 
-
-
-
-//user infor, and money, withdrawal or depoists to be recorded. 
-
-//object out of function. Function would update this. 
-
 
 let $checkingBalance = $('#checking-balance') //done
 let $savingsBalance = $('#savings-balance') //done
 
-$checkingBalance.html(bankRecord.checking) //these two lines can be pushed down later, so that I can use for h1 update. 
-$savingsBalance.html(bankRecord.savings)
+let $body = $('body'); 
 
-
-
-// function compar(value, id){
-// if(value == 'Deposit'){
-
-// }
-// }
-
-
-// console.log('this is buttons', buttons);
-
-let $inOutCheckingAccount =$('#checking-amount') //number to put
-// let $inOutBalanceAccount =$('#checking-amount')
-// let $depositButton = $('#checking-deposit'); // deposit button
-
-let $bubbleTest = $('body')
-console.log('buble', $bubbleTest);
-$bubbleTest.on('click', (e)=>{
-  console.log(e.target.value, e.target.id); //target.value is working, but currentTarget not working. 
-})
-
-let buttons = $('input[type=button]') // so I don't need this. just attach event listener to body. 
-
-// buttons.on('click', (event)=>{
-//   console.log('this is event', event.target.value, event.target.id);
+function moneyInOut(acc, button, enteredValue, acc2){
   
-//   bankRecord.checking = event.target.value == 'Deposit' ? bankRecord.checking 
-//   +Number($inOutCheckingAccount.val()) : bankRecord.checking -Number($inOutCheckingAccount.val()); 
+  let minus = bankRecord[acc] - Number(enteredValue)
+  let total = bankRecord[acc2] -minus;
 
-  // bankRecord.savings = event.target.value == 'Deposit' ? bankRecord.checking 
-  // +Number($checkingAmount.val()) : bankRecord.checking -Number($checkingAmount.val());
-// })
+  if(button =='Deposit') { 
+    bankRecord[acc] += Number(enteredValue); 
+   
+    } else if(button =='Withdraw') { 
+      if((bankRecord[acc] + bankRecord[acc2]) - Number(enteredValue) <0 ) {
+        total = total
+        console.log('Negative balance function fired');
+         return
+      }
+      if(bankRecord[acc]- Number(enteredValue) < 0 ) {
+        bankRecord[acc2] = bankRecord[acc2] +bankRecord[acc] - Number(enteredValue)
+        ///
+        bankRecord[acc] = 0 }
+       
+      if(bankRecord[acc] - Number(enteredValue) >= 0){ //because of bloody '='
+        bankRecord[acc] -= Number(enteredValue)  
+      }
+    }
+    
+    if(bankRecord.checking == 0){   
+      
+      $('#checking').addClass('zero')
+    } else if(bankRecord.checking >= 0) {
+      $('#checking').removeClass('zero')
+    }
+
+    if(bankRecord.savings == 0){
+      $('#savings').addClass('zero')
+    }else if(bankRecord.savings >= 0){
+      $('#savings').removeClass('zero')
+    }
+    $checkingBalance.html(bankRecord.checking) 
+  $savingsBalance.html(bankRecord.savings)
+
+}
 
 
-// $depositButton.on('click', (event) => {
 
-//   //만약 내가 event.target.valu 를 활용하면, 이 펑션을 depositButton 밖으로 꺼내서, 공야할 수 있다. 
-//   // 콜백 안에서 event를 상속 받아서 다시 실행하면 된다. 
-//   // console.log('this is event.this: ', event.target.value);
-//   let buttonClicked = event.target.value //why 'this' does not work?   
-//   bankRecord.checking = buttonClicked == 'Deposit' ? bankRecord.checking 
-//   +Number($checkingAmount.val()) : bankRecord.checking -Number($checkingAmount.val()); 
-
-
-// })
-  // console.log('this.value', this.value);
-  // console.log('clicked');
-  // console.log(this.value);
-  // that = this
+function whichMachin (event){
+  let account, buttonName, entered, account2
   
-  
-//   (event)=>{
+  if(event.target.id =='checking-deposit' || event.target.id =="checking-withdraw"){
+    account = 'checking';
+    account2 = 'savings'
+    buttonName = event.target.value
+    entered = $('#checking-amount').val();
+
+  } else if(event.target.id == 'savings-deposit' || event.target.id == 'savings-withdraw' ){
+    account = 'savings'
+    account2 = 'checking'
+    buttonName =event.target.value
+    entered =$('#savings-amount').val(); 
+  }
+  moneyInOut(account, buttonName, entered, account2) // 여기서 bankReor[account] 형식아로 가면, 옵첵트에 대한 레퍼런스를 넘기는 게 아니라, 값을 넘겨 버린다. Any walkaround?
+}
+
+$body.on('click', (event)=>{
+  whichMachin(event)})
+
+})  
 
 
-//   //get the val() off and add later. 
-// //  inOut($checkingAmount)
-// }
 
 
 
 
 
 
-// 4. Update page so that use can see it "change"
-//jquery, and html ID to be used. 
+
 
 // 5. no Negative balance.
 //existing css class to be used. 
@@ -111,8 +105,3 @@ let buttons = $('input[type=button]') // so I don't need this. just attach event
 
 // same function to use, changing argument order. 
 // this functino should be stored with the first function. 
-
-
-
-  
-})
