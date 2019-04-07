@@ -4,8 +4,12 @@
   font-family: 'Lato', sans-serif;
 }
 
-.header {
+body {
   background: linear-gradient(#d4d2d2 50%, #e6eeee 50%);
+}
+
+.container {
+  display: flex;
 }
 
 
@@ -51,7 +55,7 @@ nav ul li:hover {
 
 .icons .logo {
   position: absolute;
-  margin-top: 7px;
+  margin-top: 19px;
 }
 
 .icons {
@@ -113,27 +117,29 @@ nav ul li:hover {
   padding: 9px;
   justify-content: space-between;
   margin-right: 313px;
-  
-.para {
-  border: solid 4px black;
 }
 
 .homeboxes {
   display: flex;
   margin-top: 40px;
-  margin-left: 100px;
-  border: solid 5px black;  
-  background-color: pink;
+  margin-left: 150px;
+  margin-right: 313px;
 }
 
 .homeboxes img {
   border: solid 5px rgb(222, 222, 222);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.hb {
+.homeboxes h3 {
   display: inline;
+  padding-bottom: 4px;
 }
 
+.homeboxes p {
+  line-height: 23px;
+}
 
 
 
