@@ -12,11 +12,21 @@ const handleDiscoCat = function() {
 	document.body.style.backgroundImage = "url('https://media0.giphy.com/media/qvvONm8Y6RfiM/source.gif')";
 	document.body.style.backgroundSize = "cover";
 	
-	setTimeout(function(){ catImg.src = "https://media.giphy.com/media/51W8vnpWlJopfiS0FU/giphy.gif"; document.body.style.backgroundImage = null; }, 10000);
+	setTimeout(function(){ catImg.src = "https://media.giphy.com/media/51W8vnpWlJopfiS0FU/giphy.gif"; 
+		document.body.style.backgroundImage = null; }, 2000);
+	
+	catTimer = window.setInterval(catDanceInPlace, delayMs);
+	
+	window.clearInterval(catTimer);
 	
 	catTimer = window.setInterval(catWalk2, delayMs);
 	
 };
+
+const catDanceInPlace = function() {
+	catImg = document.getElementsByTagName('img')[0];
+	catImg.style.left = "0px";
+}
 
 const catWalk2 = function(){
 	//let catImg = document.getElementsByTagName('img')[0];
