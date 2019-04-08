@@ -9,7 +9,8 @@ def show_menu
   puts "[d] - Division"
   puts "[sqr] - Square a number"
   puts "[root] - Square root a number" 
-  puts "[mortgage] = Work out repayments per month"
+  puts "[mortgage] - Work out repayments per month"
+  puts "[bmi] - Body Mass Index"
   puts "[q] - Quit"
 end
 
@@ -75,6 +76,18 @@ def mortgage
   
   puts "Your Repayments will be $#{repayments} per month"
 end
+
+def bmi
+  print "Enter height (cms): "
+  height = gets.to_f / 100
+  
+  print "Enter weight (kgs): "
+  weight = gets.to_f
+  
+  bmi = weight / height ** 2
+  puts "Your BMI is #{bmi}"
+  
+end
   
 
 show_menu
@@ -98,6 +111,8 @@ until menu_choice == "q"
     root 
   when "mortgage"
     mortgage
+  when "bmi"
+    bmi
   else  
     puts "Invalid Selection"
   end
