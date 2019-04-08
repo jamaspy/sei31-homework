@@ -3,8 +3,7 @@
 // / (_ / / _ \/ _ \/ _ `/ /  | |/ / _ `/ __/ / _ `/ _ \/ / -_|_-<
 // \___/_/\___/_.__/\_,_/_/   |___/\_,_/_/ /_/\_,_/_.__/_/\__/___/
 //
-//
-console.log('Test');
+console.log('Testing ');
 
 const accounts = [{
     accName: "checking",
@@ -15,7 +14,6 @@ const accounts = [{
     value: 0
   }
 ]
-
 //    ___              __  _
 //   / _/_ _____  ____/ /_(_)__  ___  ___
 //  / _/ // / _ \/ __/ __/ / _ \/ _ \(_-<
@@ -35,17 +33,6 @@ const colorChecker = function() {
   }
 }
 
-
-// // Number Checker
-// const isItANumber = function(){
-//   if (isNaN(checkingInput) ||isNaN(savingsInput)){
-//     alert("Please a number only")
-//   } else {
-//     console.log("continue")
-//   }
-// }
-
-// Borrow from account function
 const crossAccBorrowCheck = function(){
   checkingInput = Number($('#checking-amount').val());
   const combinedBal = accounts[0].value+accounts[1].value
@@ -81,7 +68,6 @@ const crossAccBorrowSavings = function(){
     colorChecker()
   }
 }
-
 //    ____              __    __   _     __
 //   / __/  _____ ___  / /_  / /  (_)__ / /____ ___  ___ _______
 //  / _/| |/ / -_) _ \/ __/ / /__/ (_-</ __/ -_) _ \/ -_) __(_-<
@@ -132,25 +118,3 @@ $('#savings-withdraw').on('click', function() {
     colorChecker();
   }
 });
-
-
-//  ___         _        ___                                   _
-// / __|___  __| |___   / __|_ _ __ ___ _____ _  _ __ _ _ _ __| |
-//| (__/ _ \/ _` / -_) | (_ | '_/ _` \ V / -_) || / _` | '_/ _` |
-// \___\___/\__,_\___|  \___|_| \__,_|\_/\___|\_, \__,_|_| \__,_|
-//                                           |__/
-// const addNumberToChecking = function(checkingInput) {
-// accounts[0].value = accounts[0].value + checkingInput
-//
-//
-// const addMoney = function(bankAcc,deposit) {
-//   console.log(bankAcc)
-//   if (bankAcc == savings) {
-//     accounts[0].value = accounts[0].value + deposit
-//   } else { // Room for expandabilty
-//     accounts[1].value = accounts[1].value + deposit
-//   }
-//}
-
-// $('#checking-balance').text(accounts[0].value)
-// $('#savings-balance').text(accounts[1].value)
