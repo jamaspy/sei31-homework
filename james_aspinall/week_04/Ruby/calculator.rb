@@ -1,4 +1,6 @@
 require 'pry'
+require 'rainbow'
+
 
 def show_menu
   puts "-=" * 50
@@ -26,56 +28,56 @@ until menu_choice == "q"
   case menu_choice
     when "a"
       def add
-        puts "First Number"
+        puts Rainbow("First Number").green.bright
         a = gets.chop.to_i
-        puts "Second Number"
+        puts Rainbow("Second Number").blue.bright
         b = gets.chop.to_i
-        puts "Answer: #{a} + #{b} = #{a + b}"
+        puts Rainbow("Answer: #{a} + #{b} = #{a + b}").red.bright
       end
       add()
     when "a"
       def add
-        puts "First Number"
+        puts Rainbow("First Number").green.bright
         a = gets.chop.to_i
-        puts "Second Number"
+        puts Rainbow("Second Number").blue.bright
         b = gets.chop.to_i
-        puts "Answer: #{a} + #{b} = #{a + b}"
+        puts Rainbow("Answer: #{a} + #{b} = #{a + b}").red.bright
       end
       add()
     when "s"
       def subtract
-        puts "First Number"
+        puts Rainbow("First Number").green.bright
         a = gets.chop.to_i
-        puts "Second Number"
+        puts Rainbow("Second Number").blue.bright
         b = gets.chop.to_i
-        puts "Answer: #{a} - #{b} = #{a - b}"
+        puts Rainbow("Answer: #{a} - #{b} = #{a - b}").red.bright
       end
       subtract()
     when "d"
       def divide
-        puts "First Number"
+        puts Rainbow("First Number").green.bright
         a = gets.chop.to_i
-        puts "Second Number"
+        puts Rainbow("Second Number").blue.bright
         b = gets.chop.to_i
-        puts "Answer: #{a} / #{b} = #{a / b}"
+        puts Rainbow("Answer: #{a} / #{b} = #{a / b}").red.bright
       end
       divide()
     when "m"
       def multiple
-        puts "First Number"
+        puts Rainbow("First Number").green.bright
         a = gets.chop.to_i
-        puts "Second Number"
+        puts Rainbow("Second Number").blue.bright
         b = gets.chop.to_i
-        puts "Answer: #{a} x #{b} = #{a * b}"
+        puts Rainbow("Answer: #{a} x #{b} = #{a * b}").red.bright
       end
       multiple()
     when "dist"
       def distance
-        puts "Enter Your Speed (MPH)"
+        puts Rainbow("Enter Your Speed (MPH)").green.bright
         a = gets.chop.to_i
-        puts "Enter Your Time (In Minutes)"
+        puts Rainbow("Enter Your Time (In Minutes)").blue.bright
         b = gets.chop.to_i / 60
-        puts "Answer: Your Will Travel #{a * b} miles"
+        puts Rainbow("Answer: Your Will Travel #{a * b} miles").red.bright
       end
       distance()
     else
