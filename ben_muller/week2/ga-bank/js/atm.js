@@ -21,6 +21,7 @@ $(document).ready(function(){
     } else {
       checking += parseInt($checkingAmount.val());
       $checking.html(`$${checking}`)
+      $checkingAmount.val('').focus()
     }
   };
   
@@ -33,6 +34,7 @@ $(document).ready(function(){
     } else {
       savings += parseInt($savingsAmount.val());
       $savings.html(`$${savings}`)
+      $savingsAmount.val('').focus()
     }
   };
 
