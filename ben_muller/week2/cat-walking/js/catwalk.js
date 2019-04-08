@@ -95,6 +95,8 @@ const fatRightUp = function( ) {
 
   if ( parseInt(fatty.style.top) <= 0 ){
     clearInterval( fattyRolling )
+    let audio = new Audio('images/boing.mp3');
+    audio.play();
     fattyRolling = window.setInterval(fatRightDown, 50)
   };  
   
