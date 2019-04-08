@@ -1,4 +1,5 @@
 require 'pry'
+require 'rainbow'
 
 #Global Variable
 $a = 0
@@ -19,16 +20,16 @@ def show_menu
   puts "-=" * 40
   puts "Calculator" # TODO: you could .center here to make it look nice
   puts "-=" * 40 #El cheapo divider horizontal line
-  puts "[a] - Addition"
-  puts "[s] - Subtraction"
-  puts "[d] - Division"
-  puts "[m] - Multiplication"
-  puts "[r] - Square root"
-  puts "[e] - exponent"
-  puts "[q] - quit"
-  puts "[l] - loan repayments"
-  puts "[b] - Body Mass Index Calculator (BMI)"
-  puts "[j] - Journey Calculator"
+  puts Rainbow("[a] - Addition").red.underline.bright
+  puts Rainbow("[s] - Subtraction").blue.underline.bright
+  puts Rainbow("[d] - Division").green.underline.bright
+  puts Rainbow("[m] - Multiplication").yellow.underline.bright
+  puts Rainbow("[r] - Square root").aqua.underline.bright
+  puts Rainbow("[e] - Exponent").magenta.underline.bright
+  puts Rainbow("[l] - Loan repayments").bg(:yellow).black
+  puts Rainbow("[b] - Body Mass Index Calculator (BMI)").bg(:indianred).black
+  puts Rainbow("[j] - Journey Calculator").bg(:white).black
+  puts Rainbow("[q] - quit").bright
 end
 
 show_menu
@@ -38,24 +39,24 @@ until menu_choice == 'q'
   case menu_choice
   when 'a'
     numbers_getter
-    puts "#{$a} + #{$b} = #{$a + $b}" # this removes the .0 bit of a trade off with floats #{($a + $b).round($d)}
+    puts Rainbow("#{$a} + #{$b} = #{$a + $b}").red.underline.bright # this removes the .0 bit of a trade off with floats #{($a + $b).round($d)}
   when 's'
     numbers_getter
-    puts "#{$a} - #{$b} = #{$a - $b}"
+    puts Rainbow("#{$a} - #{$b} = #{$a - $b}").blue.underline.bright
   when 'd'
     numbers_getter
-    puts "#{$a} / #{$b} = #{$a / $b}"
+    puts Rainbow("#{$a} / #{$b} = #{$a / $b}").green.underline.bright
   when 'm'
     numbers_getter
-    puts "#{$a} * #{$b} = #{$a * $b}"
+    puts Rainbow("#{$a} * #{$b} = #{$a * $b}").yellow.underline.bright
   when 'r'
     print "enter number "
     a = gets.to_f
     c = Integer.sqrt(a).floor
-    puts "#{c}"
+    puts Rainbow("#{c}").aqua.underline.bright
   when 'e'
     numbers_getter
-    puts "#{$a} ** #{$b} = #{$a ** $b}"
+    puts Rainbow("#{$a} ** #{$b} = #{$a ** $b}").magenta.underline.bright
   when 'l'
     # print "Ammount borrowed "
     # a = gets.to_i
@@ -63,7 +64,7 @@ until menu_choice == 'q'
     # b = gets.to_i
     # print "term of loan in months "
     # c = gets.to_i
-    puts "coming soon"
+    puts Rainbow("coming soon but loans are boring....").bg(:yellow).black
   when 'b'
     print "enter height m "
     a = gets.to_f
@@ -73,13 +74,13 @@ until menu_choice == 'q'
     bmi = b / hsq
     puts "with a height of #{a}m and a weight of #{b}kg you ave a BMI of #{bmi.round(1)}"
     if bmi < 18.5
-      puts "EAT MORE PIES ASAP"
+      puts Rainbow("EAT MORE PIES ASAP").bg(:indianred).black
     elsif bmi < 25
-      puts "your pie consumption is perfect"
+      puts Rainbow("your pie consumption is perfect").bg(:indianred).black
     elsif bmi < 30
-      puts "chill out on the pies bro"
+      puts Rainbow("chill out on the pies bro").bg(:indianred).black
     else
-      puts "NO MORE PIES FATTY"
+      puts Rainbow("NO MORE PIES FATTY").bg(:indianred).black
     end
   when 'j'
     puts "
