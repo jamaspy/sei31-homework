@@ -9,9 +9,9 @@ def show_wait_cursor(seconds,fps=10)
 end
 
 def gary
-	puts "Hello I'm Your Friendly Neighbourhood Loan Shark, Gary!"
+	puts "Hello I'm Your Friendly Neighbourhood Loan Shark, Gary!".center(50)
 	puts "*-" * 40
-	puts "Would You Like To Take Out A Loan?('Yes' or 'No'):"
+	puts "Would You Like To Take Out A Loan?('Yes' or 'No')"
 	puts "The Annual Interest Rate Is 30%"
 	puts "*-" * 40
 end
