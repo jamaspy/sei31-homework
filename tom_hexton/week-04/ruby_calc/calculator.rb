@@ -138,7 +138,7 @@ until menu_choice == "q"
 		# rate = % per annum
 		# periods = how many years you plan on paying back the load
 		def mortgage_calc( rate, years, principal )
-			rate = rate / 12 / 100
+			rate /= (12 / 100)
 			years *= 12
 
 			puts rate
