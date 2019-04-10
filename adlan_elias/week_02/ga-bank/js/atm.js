@@ -29,7 +29,6 @@ $(document).ready(function (){
     warningRed();
     removeText();
 
-
   });
 
 	$('#savings-deposit').on('click',function (depositSaving) {
@@ -61,7 +60,7 @@ $(document).ready(function (){
   });
 
   const withdrawal = function(amount, val1, val2) {
-  	//CHECK THAT SAVING AND CHECK > 0
+  	//CHECK THAT SAVING AND CHECKING > 0
   	if (val1 >= amount) {
   		val1 -= amount;
   	} else {
@@ -91,10 +90,9 @@ $(document).ready(function (){
     }
   };
 
-  const removeText = function () {
-    $('#savings-amount').val('');
-    $('#checking-amount').val('');
+  const removeText = function () { //to remove the input text after clicking the button
+    $('#savings-amount').val('').focus();
+    $('#checking-amount').val('').focus();
   };
-
 
 });
