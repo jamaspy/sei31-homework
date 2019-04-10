@@ -1,5 +1,18 @@
 # RUBY HOMEWORK by Mabeth Borres
 
+=begin
+def findLineStops (line)
+    lineObj = nil
+    $subway.each do |key, value|
+        if key == line
+            lineObj = key
+            break
+        end
+    end
+    $subway[lineObj][:stops]
+end
+=end
+
 $subway = {
   "N" => {
     :stops => ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"]
@@ -11,17 +24,6 @@ $subway = {
     :stops => ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]
   },
 }
-
-def findLineStops (line)
-    lineObj = nil
-    $subway.each do |key, value|
-        if key == line
-            lineObj = key
-            break
-        end
-    end
-    $subway[lineObj][:stops]
-end
 
 def printStops (stopsArray, indexStart, indexEnd) 
 
@@ -54,8 +56,9 @@ def planTrip (startline, startpt, destline, destpt)
 
 	#====== startingpt details
 
-    sLinestops = findLineStops startline
-    p "#{startline} has the following stops: #{sLinestops.join(", ")}"
+    sLinestops = $subway[startline][:stops] 
+    #findLineStops startline
+    #p "#{startline} has the following stops: #{sLinestops.join(", ")}"
     
 	sIndex = sLinestops.index(startpt) 
 	
@@ -65,7 +68,8 @@ def planTrip (startline, startpt, destline, destpt)
 	
 	#====== destination details
 
-    dLinestops = findLineStops destline
+    dLinestops = $subway[destline][:stops] 
+    #findLineStops destline
 
 	dIndex = dLinestops.index(destpt)
 
@@ -78,7 +82,7 @@ def planTrip (startline, startpt, destline, destpt)
         p "Total of #{ startstops.length } stop#{(startstops.length>1 ? "s" : "")} "
 		
 	else 
-        p "#{destline} has the following stops: #{dLinestops.join(", ")}"
+        #p "#{destline} has the following stops: #{dLinestops.join(", ")}"
         
 		dUSidx = dLinestops.index(center)
 
