@@ -70,6 +70,10 @@ $('#savings-withdraw').click(function(){
 
 
 //cat animations
+
+
+/*
+
 const img = document.getElementsByTagName('img')[1];
 img.style.position = 'absolute';
 img.style.top = '-1400px';
@@ -83,6 +87,7 @@ const catsFalling = function() {
   }
 };
 window.setInterval(catsFalling, 3);
+
 
 const img2 = document.getElementsByTagName('img')[3];
 img2.style.position = 'absolute';
@@ -98,7 +103,9 @@ const catsRising = function() {
 window.setInterval(catsRising, 3);
 
 
-/*          //failed JQuery attempt
+
+
+
 const $img = $('img').eq(1);
 $img.css({'position':'absolute'});
 $img.css({'top':'-1400px'});
