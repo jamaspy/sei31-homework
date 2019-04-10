@@ -13,9 +13,9 @@ $(document).ready(function(){
       },
 
       checkWithdrawAmount: function( account, amount ){
-        if( amount < this[ account ] ){
+        if( amount <= this[ account ] ){
           this.withdraw( account, amount );
-        }else if( amount < this.checking + this.savings ){
+        }else if( amount <=  this.checking + this.savings ){
           amount -= this[ account ];
           if( account === 'checking' ){
             this.checking = 0;
@@ -49,18 +49,30 @@ $(document).ready(function(){
 
       createEvents: function(){
         $( '#savings-deposit' ).on( 'click', function(){
+          if(isNaN($( '#savings-amount' ).val())){
+            return;
+          }
           bank.deposit( 'savings', Number( $( '#savings-amount' ).val()));
         });
 
         $( '#savings-withdraw' ).on( 'click', function(){
+          if(isNaN($( '#savings-amount' ).val())){
+            return;
+          }
           bank.checkWithdrawAmount( 'savings', Number( $( '#savings-amount' ).val()));
         });
 
         $( '#checking-deposit' ).on( 'click', function(){
+          if(isNaN($( '#checking-amount' ).val())){
+            return;
+          }
           bank.deposit( 'checking', Number( $( '#checking-amount' ).val()));
         });
 
         $( '#checking-withdraw' ).on( 'click', function(){
+          if(isNaN($( '#checking-amount' ).val())){
+            return;
+          }
           bank.checkWithdrawAmount( 'checking', Number( $( '#checking-amount' ).val()));
         });
         this.visualisehtml();
