@@ -16,7 +16,6 @@ end
 #Global Variable
  $a = 0
  $b = 0
- $boy_girl = "f"
 
 #Methods
 def numbers_getter
@@ -45,7 +44,6 @@ until menu_choice == 'q'
     numbers_getter
     puts "\n#{$a} / #{$b} = #{$a / $b}"
   when 'bmi'
-    #boy_or_girl
     print "Please enter your weight in KG, followed by your height in M \n\n"
     numbers_getter
     print "\nYour BMI is #{$a/$b**2}"
