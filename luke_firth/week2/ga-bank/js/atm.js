@@ -2,8 +2,6 @@ console.log('running');
 
 
 $(function(){
-
-
 $('body').css({'background-color':'#E3E3E3'});
 $('#checking-balance').css({'background-color':'#ff0029'}) //initial 0 balance state
 $('#savings-balance').css({'background-color':'#ff0029'})  //initial 0 balance state
@@ -14,7 +12,7 @@ let amountInput = null; //input letiable for adding to total balance
 
 //checking balance
 $('#checking-amount').keyup(function(a){  //logging the input
-  amountInput = parseInt(a.target.value)  //storing the input in a letiable
+  amountInput = parseInt(a.target.value)  //storing the input in a variable
 });
 $('#checking-deposit').click(function(){        //store currrent input on click
   checkBalance += amountInput;
@@ -72,10 +70,6 @@ $('#savings-withdraw').click(function(){
 
 
 //cat animations
-
-
-
-
 const img = document.getElementsByTagName('img')[1];
 img.style.position = 'absolute';
 img.style.top = '-1400px';
@@ -89,7 +83,6 @@ const catsFalling = function() {
   }
 };
 window.setInterval(catsFalling, 3);
-
 
 const img2 = document.getElementsByTagName('img')[3];
 img2.style.position = 'absolute';
@@ -105,9 +98,7 @@ const catsRising = function() {
 window.setInterval(catsRising, 3);
 
 
-
-
-/*
+/*          //failed JQuery attempt
 const $img = $('img').eq(1);
 $img.css({'position':'absolute'});
 $img.css({'top':'-1400px'});
