@@ -77,11 +77,6 @@ var walkStart = setInterval(move, 10);
 //Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk.
 
 
-
-
-
-
-
 const homer = document.getElementById('homer');
 homer.style.position = 'absolute';
 homer.style.left = '0px';
