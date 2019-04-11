@@ -1,0 +1,27 @@
+<h1 class="edit-bike-heading">Add To Garage</h1>
+<form class="form-group" action = "/motorbikes/<%= @motorbike['id']%>" method="post">
+
+  <label class="label" for="">
+    Name:
+    <input type="text" name="make" value = "<%= @motorbike["model"] %>" >
+  </label>
+
+  <br />
+
+  <label class="label" for="">
+    Make:
+    <input type="text" name="model" value="<%= @motorbike["make"] %>" >
+  </label>
+
+  <br />
+
+  <label class="label" for="">
+    Image:
+    <input type="url" name="image" value="<%= @motorbike["image"] %>" >
+  </label>
+
+  <br />
+  <br />
+
+  <button class="new-bike-button">Edit Bike</button>
+</form>

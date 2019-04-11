@@ -1,0 +1,9 @@
+<h1>Current Stock</h1>
+<% @motorbikes.each do |motorbike| %>
+<p class = "bike-listing">
+  <a class = "bike-listing" href="/motorbikes/<%= motorbike["id"] %>">
+    <%= motorbike["model"]  %>
+    <%= motorbike["make"] %>
+  </a>
+</p>
+<% end %>
