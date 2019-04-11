@@ -1,0 +1,16 @@
+<div class="show-bike">
+  <h2><%= @motorbike["model"] %></h2>
+  <h3>
+    <%= @motorbike["make"] %>
+  </h3>
+  <br/>
+  <% unless @motorbike["image"].nil? %>
+    <img class="show-bike-image" src="<%= @motorbike["image"] %>" alt="">
+  <% end %>
+
+  <div class="controllers">
+    <a href="/motorbikes/<%= @motorbike['id'] %>/edit">EDIT</a>
+    <a href="/motorbikes/<%= @motorbike['id'] %>/delete">DELETE</a>
+  </div>
+
+</div>
