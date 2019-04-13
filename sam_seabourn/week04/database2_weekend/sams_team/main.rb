@@ -1,7 +1,8 @@
-require 'sqlite3'           
+require 'sqlite3'
 require 'pry'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'active_record'
 
 # Rails will do all this for you automagically.
 ActiveRecord::Base.establish_connection(
@@ -12,13 +13,13 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
 
-# class Pokemon < ActiveRecord::Base
-#   # belongs_to :region, :optional => true # Since Rails 5
-# end
-# #
-# class Regions < ActiveRecord::Base
-#   # has_many :pokemon
-# end
+class Pokemon < ActiveRecord::Base
+  # belongs_to :region, :optional => true # Since Rails 5
+end
+#
+class Regions < ActiveRecord::Base
+  # has_many :pokemon
+end
 
 ### Cross data goes here
 
@@ -31,13 +32,12 @@ end
 #Display all pokemon
 get '/pokemon' do
   @pokemon = Pokemon.all
-  p @pokemon
   erb :pokemon_list
 end
 
-after do
-  ActiveRecord::Base.connection.close
-end
+# after do
+#   ActiveRecord::Base.connection.close
+# end
 
 
 # binding.pry
