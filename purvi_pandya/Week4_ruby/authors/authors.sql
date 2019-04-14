@@ -4,4 +4,4 @@ CREATE TABLE authors (
   image TEXT
 );
 
-INSERT INTO authors (name) VALUES('Walter Isaacson');
+INSERT INTO authors (name) VALUES ('Walter');

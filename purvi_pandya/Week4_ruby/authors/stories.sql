@@ -1,8 +1,8 @@
 CREATE TABLE stories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
-  type TEXT,
+  family TEXT,
   image TEXT
 );
 
-INSERT INTO stories (name,type) VALUES ('Steve Jobs','Biography');
+INSERT INTO stories (name,family) VALUES ('Steve Jobs','Biography');
