@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid magenta;
-}
+} */
 body{
   background-image: url("http://cdn.collider.com/wp-content/uploads/pokemon-list.png");
   background-color: rgba(1, 0, 0, 0.5);
@@ -56,13 +56,16 @@ html, body{
  width: 66%;
  height: 66%;
  min-width: 880px;
- min-height: 415px;
+ min-height: 480px;
  box-shadow: 13px 9px 37px 9px rgba(0,0,0,0.51);
  border-radius: 10px;
 
 }
 
 h1 {
+  font-family: 'Jua', sans-serif;
+}
+h2 {
   font-family: 'Jua', sans-serif;
 }
 
@@ -74,24 +77,29 @@ a {
   color: red;
 }
 
+
+form {
+  display: inline-block;
+}
+
 .pokemondisplay {
   display: flex;
   margin-top: 8%;
 }
-.pokemondisplaysmall,img {
-  justify-content: center;
-  display: flex;
-  width: 20em;
-  margin-left: 32%;
-  margin-right: auto;
+
+.pokemondisplaysmall, img {
+    justify-content: center;
+    display: flex;
+    width: 20em;
+    max-height: 300px;
+    width: auto;
+    margin: 2em auto;
 }
 
 .pokemondisplay img {
-  justify-content: center;
-  width: 21.8%;
-  height: 16%;
-  margin-left: -2.5em;
-  margin-top: 6em;
+    width: auto;
+    height: 114px;
+    margin-top: 8em;
 }
 
 

@@ -1,6 +1,6 @@
+require 'sinatra'
 require 'sqlite3'
 require 'pry'
-require 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
 
@@ -25,6 +25,7 @@ end
 
 
 get '/' do
+  @pokemon = Pokemon.all
   erb :home
 end
 
@@ -49,10 +50,21 @@ get '/pokemon/:id' do
   erb :pokemon_show
 end
 
+post '/edit/:id' do
+  pokemon = Pokemon.find params[:id]
+  pokemon.name = params[:name].capitalize
+  pokemon.nickname = params[:nickname]
+  pokemon.image = "https://img.pokemondb.net/artwork/large/#{ params[:name].downcase }.jpg"
+  pokemon.type1 = params[:type1]
+  pokemon.type2 = params[:type2]
+  pokemon.save
+  redirect to("/pokemon/#{ params[:id] }")
+end
 
-# after do
-#   ActiveRecord::Base.connection.close
-# end
+
+after do
+  ActiveRecord::Base.connection.close
+end
 
 
 # binding.pry
