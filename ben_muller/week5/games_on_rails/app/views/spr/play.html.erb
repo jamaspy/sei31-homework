@@ -1,0 +1,22 @@
+<h2>Let's Play Scissors, Paper Rock!</h2>
+<div class="play">
+<form action="<%= spr_result_path %>">
+  <div class="yo" >
+  SCISSORS
+  <input type="checkbox" name="max" value="scissors" autofocus>
+  <%= image_tag 'scissors.png' %>
+  </div>
+  <div class="yo" >
+  PAPER
+  <input type="checkbox" name="max" value="paper" >
+  <%= image_tag 'paper1.png' %>
+    </div>
+  <div class="yo"  >
+  ROCK
+  <input type="checkbox" name="max" value="rock" >
+  <%= image_tag 'rock.png' %>
+      </div>
+  <button>Guess</button>
+
+</form>
+</div>
