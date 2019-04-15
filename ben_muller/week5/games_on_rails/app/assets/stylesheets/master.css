@@ -4,12 +4,13 @@
 .container{
   background-color: aliceblue;
    position: absolute;
-   top: 40%;
+   top: 55%;
    left: 50%;
    transform: translate(-50%, -50%);
    width: 75%;
    text-align: center;
    box-shadow: 3px 3px 5px 6px black;
+   padding: 10px;
 }
 
 nav {
@@ -29,4 +30,22 @@ nav a {
 body {
   background-color: pink;
   font-family: 'Dokdo', cursive;
+}
+
+p {
+  font-size: 25px;
+}
+
+.play {
+  display: inline-block;
+
+  justify-content: center;
+}
+
+.yo {
+  width: 5%;
+}
+
+img {
+  width: 30px;
 }
