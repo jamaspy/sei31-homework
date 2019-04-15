@@ -26,17 +26,30 @@ $(document).ready(function () {
     return parseInt($('#savings-amount').val());
   };
 
+  const checkForZero = function () {
+    $('.zero').removeClass('zero');
+
+    if (getCheckingBalance() <= 0) {
+      $('#checking-balance').addClass('zero');
+    }
+
+    if (getSavingsBalance() <= 0) {
+      $('#savings-balance').addClass('zero');
+    }
+  };
+    checkForZero();
+
 // Checking: Deposit Money
   const checkingBalanceAfterDeposit = function () {
     const checkingBalance = getCheckingBalance();
     const depositAmount = getCheckingAmount();
+
     const updatedBalance = checkingBalance + depositAmount;
 
     setCheckingBalance(updatedBalance);
+    $('#checking-amount').val('').focus();
+    checkForZero();
 
-    if (getCheckingBalance() > 0) {
-      $('#checking-balance').removeClass('zero');
-    }
   };
 
   $('#checking-deposit').on('click', checkingBalanceAfterDeposit);
@@ -45,6 +58,7 @@ $(document).ready(function () {
 // Checking: Withdraw Money
   const checkingBalanceAfterWithdrawal = function () {
     const withdrawAmount = getCheckingAmount();
+    $('#checking-amount').val('').focus();
     const checkingBalance = getCheckingBalance();
     const savingsBalance = getSavingsBalance();
 
@@ -58,9 +72,7 @@ $(document).ready(function () {
       const withdrawTwo = savingsBalance - withdrawOne;
       setSavingsBalance(withdrawTwo);
     }
-    if (getCheckingBalance() === 0) {
-      $('#checking-balance').addClass('zero');
-    }
+  checkForZero();
   };
 
   $('#checking-withdraw').on('click', checkingBalanceAfterWithdrawal);
@@ -70,12 +82,11 @@ $(document).ready(function () {
   const savingBalanceAfterDeposit = function () {
     const savingsBalance = getSavingsBalance();
     const depositAmount = getSavingsAmount();
+    $('#savings-amount').val('').focus();
     const updatedBalance =  savingsBalance + depositAmount;
     setSavingsBalance(updatedBalance);
+    checkForZero();
 
-    if (getSavingsBalance() > 0) {
-      $('#savings-balance').removeClass('zero');
-    }
   };
 
  $('#savings-deposit').on('click', savingBalanceAfterDeposit);
@@ -84,8 +95,9 @@ $(document).ready(function () {
 // Savings: Withdraw Money
   const savingBalanceAfterWithdrawal = function () {
     const withdrawAmount = getSavingsAmount();
+    $('#savings-amount').val('').focus();
     const savingsBalance = getSavingsBalance();
-    const checkingBalance = getCheckingBalance
+    const checkingBalance = getCheckingBalance();
     if (withdrawAmount <= savingsBalance) {
       const updatedBalance = savingsBalance - withdrawAmount;
       setSavingsBalance(updatedBalance);
@@ -96,9 +108,7 @@ $(document).ready(function () {
       const withdrawTwo = checkingBalance - withdrawOne;
       setCheckingBalance(withdrawTwo);
     }
-    if (getSavingsBalance() === 0) {
-      $('#savings-balance').addClass('zero');
-    }
+    checkForZero();
   };
 
   $('#savings-withdraw').on('click', savingBalanceAfterWithdrawal);
