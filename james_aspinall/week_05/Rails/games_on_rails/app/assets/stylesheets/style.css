@@ -55,6 +55,7 @@ nav {
     font-size: 100px;
     color: pink;
     text-decoration: none;
+    transform: rotate(25deg);
 }
 
 .input{
@@ -68,6 +69,7 @@ nav {
     width: 450px;
     font-family: monofur, monospace;
     font-size: 16px;
+    color: whitesmoke;
     background-color: rgba(25,120,190,0);
 }
 
