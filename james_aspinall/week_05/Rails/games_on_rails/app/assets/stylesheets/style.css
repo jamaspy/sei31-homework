@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monofur, monospace;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(25,120,190,1) 0%, rgba(37,60,119,1) 90% );
+
+
+}
+
+nav {
+    position: relative
+}
+
+.navbar {
+    padding: 20px;
+    text-align: right;
+}
+
+.navbar a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+.navbar a:hover {
+    margin-right: 20px;
+    color: pink;
+    text-decoration: none;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    text-align: center;
+}
+
+.icon{
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 100px;
+    color: white;
+    text-decoration: none;
+}
+.icon:hover{
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 100px;
+    color: pink;
+    text-decoration: none;
+}
+
+.input{
+    background-color: beige;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid white;
+    height: 40px;
+    margin-top: 10px;
+    width: 450px;
+    font-family: monofur, monospace;
+    font-size: 16px;
+    background-color: rgba(25,120,190,0);
+}
+
+.input:focus{
+    background-color: rgba(25,120,190,0);
+}
+
+.button{
+    margin-top: 10px;
+    border: none;
+    font-size: 50px;
+    background-color: rgba(25,120,190,0);
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+}
