@@ -1,0 +1,23 @@
+<h1>All Dogs</h1>
+<% @dogs.each do |dog| %>
+<%= image_tag dog.image, :class => "thumbnail"%>
+
+<ul>
+<li>Name: <%= link_to dog.name, dog_path(dog.id) %> </li>
+<li>Breed: <%= dog.breed %></li>
+<li>color: <%= dog.color %></li>
+
+<% if dog.dob.present? %>
+<li>Date of Birth: <%= dog.dob.strftime "%A, %B %e, %Y" %></li>
+<% end %>
+<li>Desexed: <%= dog.desexed %></li>
+<li>Behaviour: <%= dog.behaviour %></li>
+<li>Kennel Cough Vac: <%= dog.kennel_cough %></li>
+<li>Flea Treatment: <%= dog.flea %></li>
+<li>Worm Treatment: <%= dog.worm %></li>
+<li>Owner: <%= dog.owner_id %></li>
+
+
+</ul>
+
+<% end %>
