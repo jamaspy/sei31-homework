@@ -1,0 +1,14 @@
+<h1><%= @mountain.name %></h1>
+
+<%= image_tag @mountain.image, :classs => 'feature' %>
+<ul>
+  <li><%= @mountain.country %></li>
+  <li><%= number_with_delimiter(@mountain.altitude, :delimiter => ',')  %> m</li>
+</ul>
+
+<div class="controller">
+  
+  <%= link_to 'Edit Mountain', edit_mountain_path(@mountain.id) %>
+  <%= link_to 'Delete Mountain', mountain_path(@mountain.id), :method => 'delete', :data => { :confirm => "Are you want to delete this?" }%>
+     
+</div>
