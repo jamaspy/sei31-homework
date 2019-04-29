@@ -34,7 +34,11 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
       console.log(`This trip has ${result} stops`);
       return result;                                //function "Math.abs" takes 2 perameters
     }                                               //stores the difference in "result" and then outputs to the console using a classic console.log
-  } else {
+  }
+
+
+
+   else {
     for (let i = 0; i < start.length; i++) {
       if (start[i] === startStop) {             //Here is another for loop to grab the first stop and store its index in startIndex
         startIndex = i;                         //then we are going to get the unionSquare index of that line and store it as mid1
@@ -61,10 +65,19 @@ const howManyStops = function(startline, startStop, endLine, endStop) {  //howMa
   };
 };
 howManyStops('blueLine', 'Grand Central', 'blueLine', 'Union Square');  //single line trip
-howManyStops('greenLine', '1st', 'redLine', '34th');                    //multi line trip
-howManyStops('redLine', 'Times Square', 'blueLine', 'Grand Central');   //multi line trip 2
+//howManyStops('greenLine', '1st', 'redLine', '34th');                    //multi line trip
+//howManyStops('redLine', 'Times Square', 'blueLine', 'Grand Central');   //multi line trip 2
 
-howManyStops('blueLine', 'Astor Place', 'blueLine', 'Central Station');  //broken
+//howManyStops('blueLine', 'Astor Place', 'blueLine', 'Central Station');  //broken
+
+
+
+
+
+
+
+
+
 
 
 //Lines for reference

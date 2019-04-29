@@ -1,0 +1,2 @@
+Mountain.destroy_all
+Mountain.create(:name => "Mt Kilimanjaro", :country => "Kenya", :altitude => 5895, :image => 'http://kilimanjaroheight.com/wp-content/uploads/2015/12/Mt.-Kilimanjaro-e1449597817558.jpg')
