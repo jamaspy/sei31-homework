@@ -17,6 +17,7 @@
 
 ## my addons
 1. back to top button - **done**
+1. added alt title 
 
 setup second helper function to get the larger sized image. link these together, have a hidden div for the larger photo and the larger image inside. on click zooms in.....
 button at the bottom that scrolls within the page to take you to the top.

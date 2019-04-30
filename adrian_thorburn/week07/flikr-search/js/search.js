@@ -1,18 +1,4 @@
 const showImages = function(results) {
-  // create another helper to give you the link to the flickr item.
-  const generateImgPage = function (p) {
-      return [
-        'http://farm',
-        p.farm,
-        '.static.flickr.com/',
-        p.server,
-        '/',
-        p.id,
-        '_',
-        p.secret,
-        '_o.jpg' // resize image, q=thumbnail, m=medium, o=original
-      ].join('');
-  }
   // Nested AKA Helper function that returns a thumbnail URL for a given photo object
   const generateURL = function (p) {
     return [
@@ -32,10 +18,20 @@ const showImages = function(results) {
     // create a URL for the photo
     const thumbnailURL = generateURL(photo);
     // create an image to display that photo URL
-    const $img = $('<img>', {src: thumbnailURL});
-    //console.log($img);
-    //shove that image into the page
-    $('#images').append($img)
+    const $img = $('<img>', {src: thumbnailURL, alt: photo.title });
+
+    //get the image link information
+    const photoID = photo.id
+    const photoOwner = photo.owner
+
+    //build the direct URL and place inside <a> tag with picture
+    const $largeIMG = $('<a>', {href: `https://www.flickr.com/photos/${photoOwner}/${photoID}`})
+    //console.log($largeIMG);
+    $largeIMG.appendTo('#images')
+    $img.appendTo($largeIMG)
+    // $('#images').append($largeIMG)
+    // $('#images').append($img)
+
   });
 };
 
@@ -60,9 +56,11 @@ const searchFlickr = function (terms) { //the ajax request
         lastPage = true;
         console.log(lastPage);
       } else {
-        console.log( "current page " + data.photos.page );
-        console.log( "max page " + data.photos.pages );
-        console.log(data);
+        // console.log( "id " + data.photos['photo'][0]['id'] );
+        // console.log( "owner " + data.photos.photo.owner );
+         console.log(data);
+         //https://www.flickr.com/photos/{user-id}/{photo-id} - individual photo
+
 
       }
     });
