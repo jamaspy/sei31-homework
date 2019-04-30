@@ -23,11 +23,13 @@ const showImages = results => {
   results.photos.photo.forEach(photo => {
     const thumbnailURL  = generateURL(photo);
     const photoURL = generateFlickrURL(photo, 'b');
+    const owner = photo.owner;
+    const id = photo.id;
 
     //create an image that display that photos
     const $img = $(`
       <a href="#ex1" rel="modal:open" class="item">
-        <img src="${thumbnailURL}" data-photo="${photoURL}">
+        <img src="${thumbnailURL}" data-photo="${photoURL}" data-id="${id}" data-owner="${owner}">
       </a>
     `);
 
@@ -54,20 +56,24 @@ const searchFlickr = function (terms) {
     api_key: '2f5ac274ecfac5a455f38745704ad084', //not secret key
     text: terms,
     format: 'json',
-    page: currentPage
+    page: currentPage,
   }).done(function(data) {
 
     showImages(data)
-
-    $('.item').on('click', event => {
+    
+    $('.item').on('click', e => {
       e.preventDefault();
-      const photo = $(event.target).data('photo');
-      $('#ex1').html(`<img src="${photo}" />`);
+      const photo = $(e.target).data('photo');
+      const owner = $(e.target).data('owner');
+      const id = $(e.target).data('id');
+      $('#ex1').html(`<a href="https://www.flickr.com/photos/${owner}/${id}"><img src="${photo}" /></a>`);
+      
     });
 
     maxPages = data.photos.pages;
     currentPage++;
-  });
+
+  })
 
 };
 
