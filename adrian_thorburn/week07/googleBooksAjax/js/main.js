@@ -1,9 +1,7 @@
 console.log("YO");
-// %20 = space
 
 const fetchBook = function() {
   const xhr = new XMLHttpRequest(); // Get an XHR instance
-
   xhr.onreadystatechange = function () {
     // Ignore all the ready States except 4. Get out of this function ASAP.
     if (xhr.readyState !== 4) { // xhr state, same as class example
@@ -29,27 +27,5 @@ const fetchBook = function() {
   xhr.send(); //Asynchronous - happens in the background
 };
 
-document.getElementById('fetch').addEventListener('click', fetchBook);
-
-
-
-// get '/book_summary' do
-// @title = params[:title] # IRL: params[:title]
-// url = "https://www.googleapis.com/books/v1/volumes?q=title:#{ @title }"
-// @info = HTTParty.get url
-// @book_cover = @info["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
-// @author = @info["items"][0]["volumeInfo"]["authors"].join
-// @description = @info["items"][0]["volumeInfo"]["description"]
-
-
-// const xhr = new XMLHttpRequest(); // Get an XHR instance
-// xhr.open('GET', 'https://www.googleapis.com/books/v1/volumes?q=' + bookTitle); //open the connection
-// xhr.send(); //Asynchronous - happens in the background
-
-
-// const getBook = function() {
-//   console.log(document.getElementById('getBook'));
-// }
-
-
-// document.getElementById('getBook').addEventListener('click', getBook);
+document.getElementById('fetch').addEventListener('submit', fetchBook);
+//event.preventDefault();

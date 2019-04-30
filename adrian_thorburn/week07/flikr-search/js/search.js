@@ -25,12 +25,16 @@ const showImages = function(results) {
     const photoOwner = photo.owner
 
     //build the direct URL and place inside <a> tag with picture
-    const $largeIMG = $('<a>', {href: `https://www.flickr.com/photos/${photoOwner}/${photoID}`})
+    const $largeIMG = $('<a>', {href: `https://www.flickr.com/photos/${photoOwner}/${photoID}`, target: '_blank'})
     //console.log($largeIMG);
     $largeIMG.appendTo('#images')
     $img.appendTo($largeIMG)
-    // $('#images').append($largeIMG)
-    // $('#images').append($img)
+
+    // $('img').on('click', function (event) {
+    //   console.log('hi');
+    //   $('img', this).empty();
+    //   $('img', this).empty();
+    //});
 
   });
 };
@@ -89,6 +93,10 @@ $(document).ready(function () {
       searchFlickr(query);
     }
   }, 500));
+
+  $('<a>').hover(function(){
+    console.log('hover');
+  });
 
   // reset to top of page:
   // When the user clicks on the button, scroll to the top of the document

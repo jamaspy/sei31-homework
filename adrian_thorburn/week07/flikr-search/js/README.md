@@ -13,11 +13,10 @@
 
 ## bonus
 1. Bonus: display larger images in an attractive slideshow
-1. Bonus: add links back to each image's own page on Flickr.com
+1. Bonus: add links back to each image's own page on Flickr.com - **done**
 
 ## my addons
 1. back to top button - **done**
-1. added alt title 
+- modded - scrolls within the page **done**
 
-setup second helper function to get the larger sized image. link these together, have a hidden div for the larger photo and the larger image inside. on click zooms in.....
-button at the bottom that scrolls within the page to take you to the top.
+1. added alt title - **done**
