@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
+
+
+.container{
+   position: absolute;
+   top: 55vh;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 75%;
+   text-align: center;
+   padding: 2em;
+   box-shadow: 3px 3px 5px 6px rgb(74, 77, 73);
+}
+
+img {
+  max-height: 600px;
+  max-width: 700px;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Lato', sans-serif;
+}
+
+body a {
+  text-decoration: none;
+  color: red;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body a:hover {
+  color: orange;
+}
+
+nav {
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.controller {
+  display: flex;
+  justify-content: space-around;
+}
+
