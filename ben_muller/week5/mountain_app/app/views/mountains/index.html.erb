@@ -1,0 +1,11 @@
+<h1>Famous Mountain Ranges</h1>
+
+<% @mountains.each do |mountain| %>
+<h3> <%= link_to mountain.name, mountain_path(mountain.id) %></h3>
+
+  <p><strong>Country: <%= mountain.country %></strong></p>
+  
+  <p><strong>Altitude: </strong><%= number_with_delimiter(mountain.altitude, :delimiter => ',') %> m</p>
+
+
+<% end %>
