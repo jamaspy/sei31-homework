@@ -1,0 +1,15 @@
+{
+  "name": "flickr-search",
+  "version": "1.0.0",
+  "description": "flickr ajax api project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "author": "James Aspinall",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

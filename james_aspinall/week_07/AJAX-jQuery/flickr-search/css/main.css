@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+    text-shadow: 1px 1px 1px rgba(75, 75, 75, 0.616);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+
+}
+
+.fixed {
+    position: fixed;
+    width: 960px;
+    z-index: 10;
+    background: white;
+}
+
+header {
+    /* background-color: #0093E9; */
+    background-image: linear-gradient(160deg, rgb(41, 98, 213) 0%, rgb(232, 55, 131) 100%);
+    height: 150px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px 10px 0 0;
+
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: azure;
+    margin-left: 5px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    caret-color: #FF00D3;
+    color: whitesmoke;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 1px 1px rgba(75, 75, 75, 0.616);
+}
+
+i {
+    font-size: 22px;
+}
+
+section {
+    height: 300px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: white;
+    position: relative;
+}
+
+main {
+    position: absolute;
+    width: 960px;
+    top: 50%;
+    left: 26.5%;
+    text-align: center;
+}
+
+
+#img-1 {
+    height: 100%;
+    width: 32%;
+    border: 3px solid #c7c7c7;
+    border-radius: 5px;
+    display: inline-block;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#img-2 {
+    height: 100%;
+    width: 33%;
+    border: 3px solid #c7c7c7;
+    border-radius: 5px;
+    display: inline-block;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
+
+#img-3 {
+    height: 100%;
+    width: 32%;
+    border: 3px solid #c7c7c7;
+    border-radius: 5px;
+    display: inline-block;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
+
+#title {
+    height: 60px;
+
+    background-image: linear-gradient(160deg, rgb(41, 98, 213) 0%, rgb(232, 55, 131) 100%);
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+
+#images {
+    text-align: center;
+}
+
+img {
+    margin: 10px 10px;
+    border-radius: 10px;
+    width: 196px;
+    height: 196px;
+}

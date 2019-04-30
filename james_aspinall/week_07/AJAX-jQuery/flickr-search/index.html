@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/jquery.js"></script>
+    <script src="js/search.js"></script>
+    <title>Image Search</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="fixed">
+            <header>
+                <h1>flickr Image Search</h1>
+                <br />
+                <form id="search">
+                    <label for="">
+                        Search Terms:
+                        <input type="search" id="query" required autofocus>
+                    </label>
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+            </header>
+            <section>
+                <div id="img-1"></div>
+                <div id="img-2"></div>
+                <div id="img-3"></div>
+            </section>
+            <div id="title"></div>
+        </div>
+        <main>
+            
+            <div id="images"></div>
+    </div>
+    </main>
+    </div>
+
+</body>
+
+</html>
