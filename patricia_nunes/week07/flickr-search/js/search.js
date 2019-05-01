@@ -60,7 +60,8 @@ const searchFlickr = function (terms) {
   }).done(function(data) {
 
     showImages(data)
-    
+    console.log(data);
+
     $('.item').on('click', e => {
       e.preventDefault();
       const photo = $(e.target).data('photo');
@@ -96,6 +97,7 @@ $(document).ready(function () {
     if (scrollBottom <= 500 && scrollBottom % 500 === 0) {
       if (currentPage > maxPages && currentPage > 1) {
         console.log('no more results')
+        
         return;
       };
       //more results
