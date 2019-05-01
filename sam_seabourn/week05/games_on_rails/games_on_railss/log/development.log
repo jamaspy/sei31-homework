@@ -2681,3 +2681,282 @@ Processing by PagesController#secretnumber as HTML
 Completed 200 OK in 69ms (Views: 68.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/secretnumber" for ::1 at 2019-04-16 10:11:55 +1000
+Processing by PagesController#secretnumber as HTML
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 273ms (Views: 263.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-04-16 10:11:59 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/magic8" for ::1 at 2019-04-16 10:12:02 +1000
+Processing by PagesController#magic8 as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:12:03 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:12:04 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:12:05 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/secretnumber" for ::1 at 2019-04-16 10:12:07 +1000
+Processing by PagesController#secretnumber as HTML
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 237ms (Views: 232.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:12:12 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"5"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/psr" for ::1 at 2019-04-16 10:12:15 +1000
+Processing by PagesController#psr as HTML
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:12:19 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Scissors"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/magic8" for ::1 at 2019-04-16 10:14:46 +1000
+Processing by PagesController#magic8 as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:14:47 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-04-16 10:14:50 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/psr" for ::1 at 2019-04-16 10:15:03 +1000
+Processing by PagesController#psr as HTML
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/secretnumber" for ::1 at 2019-04-16 10:15:05 +1000
+Processing by PagesController#secretnumber as HTML
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/magic8" for ::1 at 2019-04-16 10:15:06 +1000
+Processing by PagesController#magic8 as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-04-16 10:15:07 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/magic8" for ::1 at 2019-04-16 10:15:09 +1000
+Processing by PagesController#magic8 as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-04-16 10:15:10 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 90ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/magic8" for ::1 at 2019-04-16 10:15:12 +1000
+Processing by PagesController#magic8 as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:15:13 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:15:14 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/magic8" for ::1 at 2019-04-16 10:15:15 +1000
+Processing by PagesController#magic8result as HTML
+  Rendering pages/magic8.html.erb within layouts/application
+  Rendered pages/magic8.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/secretnumber" for ::1 at 2019-04-16 10:15:18 +1000
+Processing by PagesController#secretnumber as HTML
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 147ms (Views: 145.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:15:20 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"1"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:15:22 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"1"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:15:26 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"1"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:15:31 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"1"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/secretnumber" for ::1 at 2019-04-16 10:15:31 +1000
+Processing by PagesController#snresult as HTML
+  Parameters: {"userguess"=>"1"}
+  Rendering pages/secretnumber.html.erb within layouts/application
+  Rendered pages/secretnumber.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/psr" for ::1 at 2019-04-16 10:15:32 +1000
+Processing by PagesController#psr as HTML
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:34 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Paper"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:41 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Scissors"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:43 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Paper"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:44 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Paper"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:45 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Paper"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/psr" for ::1 at 2019-04-16 10:15:48 +1000
+Processing by PagesController#psr as HTML
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/psr" for ::1 at 2019-04-16 10:15:51 +1000
+Processing by PagesController#psrresult as HTML
+  Parameters: {"userpick"=>"Rock"}
+  Rendering pages/psr.html.erb within layouts/application
+  Rendered pages/psr.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-04-16 10:15:53 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
