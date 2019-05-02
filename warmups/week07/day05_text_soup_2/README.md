@@ -1,6 +1,6 @@
 ### Text Soup 2: the Widgeting
 
-Using the solution for the original text soup, and the [dat.gui](https://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage) Javascript library, add controller elements to the Text Soup page to allow real-time control of the following parameters from within the browser:
+Using the solution for the presidential text soup, and the [dat.gui](https://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage) Javascript library, add controller elements to the Text Soup page to allow real-time control of the following parameters from within the browser:
 
 - fade in time (i.e. a range from 1 to 5000 milliseconds)
 - fade out time
