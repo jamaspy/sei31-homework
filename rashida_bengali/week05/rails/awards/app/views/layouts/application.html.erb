@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Games</title>
+    <title>Awards</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,13 +12,15 @@
   <body>
     <div class="container">
       <nav>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Magic 8 Ball", magic_path %>
-        <%= link_to "Secret Number", secret_path %>
-        <%= link_to "Rock Papers Scissors", rock_path %>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'All Directors', directors_path %>
+        <%= link_to 'Add Director', new_director_path %>
+        |
+        |
+        <%= link_to 'All Movies', movies_path %>
+        <%= link_to 'Add Movies', new_movie_path %>
       </nav>
       <%= yield %>
     </div>
-
   </body>
 </html>
