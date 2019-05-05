@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Magic 8 Ball", magic_path %>
+        <%= link_to "Secret Number", secret_path %>
+        <%= link_to "Rock Papers Scissors", rock_path %>
+      </nav>
+      <%= yield %>
+    </div>
+
   </body>
 </html>
