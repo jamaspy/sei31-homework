@@ -13,7 +13,7 @@ end
      url = "https://www.googleapis.com/books/v1/volumes?q=#{@bookname}"
      @bookhash = HTTParty.get url;
      @image = @bookhash["items"][0]["volumeInfo"]["imageLinks"]["smallThumbnail"]
-     @image1 = @image.to_s
+     erb :result
   end
 
 
